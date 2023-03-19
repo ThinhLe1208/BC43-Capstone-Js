@@ -23,16 +23,45 @@
 </head>
 
 <body>
-    <p>test</p>
+    <section class="carousel">
+
+        <div class="container">
+            <div class="carousel__img">
+                <img src="/assets/img/slider_img.png" alt="product-img">
+            </div>
+
+            <div class="carousel__info">
+                <h3 class="carousel__name">Product name</h3>
+                <p class="carousel__description">Product description ...</p>
+                <button>Buy now</button>
+            </div>
+
+            <div class="carousel__nav">
+                <div class="carousel__btn-left"></div>
+                <div class="carousel__btn-right"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="feature">
+        <div class="container">
+            <div class="feature__title">-Product Feature-</div>
+            <ul class="feature__content row">
+                <!-- render -->
+            </ul>
+        </div>
+    </section>
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
     <!-- API -->
-    <script src="/customer/controller/api.js"></script>
+    <script src="./controllers/api.js"></script>
 
     <!-- Main JS -->
-    <script src="/customer/controller/index.js"></script>
+    <script src="./controllers/index.js"></script>
 </body>
 
 </html>

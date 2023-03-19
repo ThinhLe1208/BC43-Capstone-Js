@@ -12,10 +12,10 @@
   flex-direction: $fd;
 
   @if ($fd == row) {
-    @if ($jc && $ai == null) {
+    @if ($jc and $ai == null) {
       justify-content: $jc;
       align-items: $direction-row-align-item;
-    } @else if($jc == null && $ai) {
+    } @else if($jc == null and $ai) {
       justify-content: $direction-row-justify-content;
       align-items: $ai;
     } @else {

@@ -1,0 +1,51 @@
+.carousel {
+  background: url("/assets/img/slider_bg.png") bottom / cover no-repeat;
+
+  .container {
+    @include d-flex();
+    position: relative;
+    height: 53rem;
+    padding: 0 9.6rem;
+  }
+
+  .carousel__img {
+    width: 75%;
+  }
+}
+
+.carousel__info {
+  width: 25%;
+  position: relative;
+  z-index: 5;
+
+  .carousel__name {
+    @include text($fz: $fz-xxl);
+    margin-bottom: 10px;
+  }
+
+  .carousel__description {
+    @include text($fz: $fz-lg);
+    margin-bottom: 20px;
+  }
+
+  button {
+    @include button();
+  }
+}
+
+.carousel__nav {
+  @include d-flex();
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  .carousel__btn-left {
+    @extend %arrow-button;
+    transform: rotate(-90deg);
+  }
+
+  .carousel__btn-right {
+    @extend %arrow-button;
+    transform: rotate(90deg);
+  }
+}
