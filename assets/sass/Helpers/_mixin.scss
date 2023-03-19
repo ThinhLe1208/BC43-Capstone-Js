@@ -1,0 +1,120 @@
+// text
+// $fz: 1.4rem, $fw: 300, $c: #000
+@mixin text($fz: $fz-md, $fw: $fw-light, $c: $text-dark-c0) {
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+}
+
+// display flex
+@mixin d-flex($fd: row, $jc: null, $ai: null) {
+  display: flex;
+  flex-direction: $fd;
+
+  @if ($fd == row) {
+    @if ($jc && $ai == null) {
+      justify-content: $jc;
+      align-items: $direction-row-align-item;
+    } @else if($jc == null && $ai) {
+      justify-content: $direction-row-justify-content;
+      align-items: $ai;
+    } @else {
+      justify-content: $direction-row-justify-content;
+      align-items: $direction-row-align-item;
+    }
+  } @else if ($fd == column) {
+    @if ($jc && $ai == null) {
+      justify-content: $jc;
+      align-items: $direction-col-align-item;
+    } @else if($jc == null && $ai) {
+      justify-content: $direction-col-justify-content;
+      align-items: $ai;
+    } @else {
+      justify-content: $direction-col-justify-content;
+      align-items: $direction-col-align-item;
+    }
+  }
+}
+
+// default button
+@mixin button(
+  $fz: $fz-lg,
+  $fw: $fw-light,
+  $c: $text-light-c0,
+  $bg: $bg-orange-c0,
+  $bd: transparent,
+  $br: 0,
+  $p: 1.2rem 3.5rem,
+  $c-hover: null,
+  $bg-hover: null
+) {
+  font-size: $fz;
+  font-weight: $fw;
+  color: $c;
+  background: $bg;
+  border: $bd;
+  border-radius: $br;
+  padding: $p;
+  cursor: pointer;
+
+  @if ($c-hover && $bg-hover) {
+    &:hover {
+      color: $c-hover;
+      background: $bg-hover;
+    }
+  }
+}
+
+// arrow button
+%arrow-button {
+  position: relative;
+  width: 10rem;
+  height: 6rem;
+  overflow: hidden;
+  box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    content: "";
+    width: 6rem;
+    height: 6rem;
+    background-color: transparent;
+    transform: translate(-50%, 50%) rotate(45deg);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// badge
+%badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  font-size: $fz-xl;
+  font-weight: $fw-semibold;
+  color: $text-dark-c3;
+  background-color: $bg-light-c3;
+
+  + & {
+    margin-right: 2rem;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+// input
+%input-control {
+  @include text($fz: $fz-xl + 0.6rem, $fw: $fw-regular);
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  background-clip: padding-box;
+  padding: 0.5rem 2rem;
+}

@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * $gutter-y-c3);
+  margin-left: calc(-0.5 * $gutter-x-c4);
+  margin-right: calc(-0.5 * $gutter-x-c4);
+}
+
+.row > * {
+  margin-top: $gutter-y-c3;
+  padding-left: calc(0.5 * $gutter-x-c4);
+  padding-right: calc(0.5 * $gutter-x-c4);
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-4 {
+  flex: 1 0 auto;
+  width: calc(100% / 3);
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  padding-left: $gutter-x-c1;
+  margin-left: auto;
+  margin-right: auto;
+}
