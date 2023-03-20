@@ -251,6 +251,7 @@ button {
 .feature .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .feature .feature__title {
@@ -326,6 +327,12 @@ button {
   position: relative;
   height: 53rem;
   padding: 0 9.6rem;
+}
+.carousel .carousel__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .carousel .carousel__img {
   width: 75%;

@@ -23,10 +23,10 @@
       align-items: $direction-row-align-item;
     }
   } @else if ($fd == column) {
-    @if ($jc && $ai == null) {
+    @if ($jc and $ai == null) {
       justify-content: $jc;
       align-items: $direction-col-align-item;
-    } @else if($jc == null && $ai) {
+    } @else if($jc == null and $ai) {
       justify-content: $direction-col-justify-content;
       align-items: $ai;
     } @else {

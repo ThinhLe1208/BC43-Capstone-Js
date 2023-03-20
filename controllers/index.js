@@ -1,4 +1,27 @@
+const carousel = document.querySelector('.self-build-carousel');
 const feature = document.querySelector('.feature__content');
+
+const renderCarousel = async () => {
+    const products = await getProducts();
+
+    const htmlString = products.map((product) => {
+        return `
+        <div class="carousel__item item">
+            <div class="carousel__img">
+                <img src="${product.image}" alt="product-img">
+            </div>
+            <div class="carousel__info">
+                <h3 class="carousel__name">${product.name}</h3>
+                <p class="carousel__description">${product.shortDescription}</p>
+                <button>Buy now</button>
+            </div>
+        </div>
+        `;
+    });
+
+    carousel.innerHTML = htmlString.join('');
+    console.log('render done');
+};
 
 const renderFeature = async () => {
     const products = await getProducts();
@@ -26,5 +49,7 @@ const renderFeature = async () => {
     feature.innerHTML = htmlString.join('');
 };
 
-window.onload = renderFeature;
+renderCarousel();
+renderFeature();
+
 

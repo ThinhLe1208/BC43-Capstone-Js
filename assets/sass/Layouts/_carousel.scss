@@ -8,6 +8,16 @@
     padding: 0 9.6rem;
   }
 
+  .carousel__item {
+    @include d-flex();
+  }
+
+  .left-btn {
+  }
+
+  .right-btn {
+  }
+
   .carousel__img {
     width: 75%;
   }

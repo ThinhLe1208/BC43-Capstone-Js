@@ -13,10 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Carousel -->
+    <link rel="stylesheet" href="./assets/lib/self-build-carousel.css">
 
     <!-- Main Css -->
     <link rel="stylesheet" href="/assets/css/index.min.css">
@@ -24,26 +22,12 @@
 
 <body>
     <section class="carousel">
-
         <div class="container">
-            <div class="carousel__img">
-                <img src="/assets/img/slider_img.png" alt="product-img">
-            </div>
-
-            <div class="carousel__info">
-                <h3 class="carousel__name">Product name</h3>
-                <p class="carousel__description">Product description ...</p>
-                <button>Buy now</button>
-            </div>
-
-            <div class="carousel__nav">
-                <div class="carousel__btn-left"></div>
-                <div class="carousel__btn-right"></div>
+            <div class="self-build-carousel">
+                <!-- render -->
             </div>
         </div>
-
     </section>
-
 
     <section class="feature">
         <div class="container">
@@ -60,8 +44,22 @@
     <!-- API -->
     <script src="./controllers/api.js"></script>
 
+    <!-- Carousel -->
+    <script src="./controllers/lib/self-build-carousel.js"></script>
+
     <!-- Main JS -->
     <script src="./controllers/index.js"></script>
+
+    <script>
+        window.onload = () => {
+            Carousel({
+                selector: ".self-build-carousel",
+                responsive: {
+                    0: 1
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
