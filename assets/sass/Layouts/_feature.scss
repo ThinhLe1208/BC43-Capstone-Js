@@ -1,5 +1,5 @@
 .feature {
-  padding: 4.6rem 0;
+  padding: 2rem 0;
 
   .container {
     @include d-flex(column);
@@ -11,7 +11,7 @@
   }
 
   .feature__title {
-    @include text($fz-xxl, $fw-regular, $lh: $lh-xl);
+    @include text($fz-xxl, $fw-regular, $lh: $lh-xxl);
     margin-bottom: 9rem;
   }
 

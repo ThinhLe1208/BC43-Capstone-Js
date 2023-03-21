@@ -1,6 +1,6 @@
 .carousel {
   background: url("/assets/img/slider_bg.png") bottom / contain no-repeat;
-  padding-top: 10rem;
+  padding: 10rem 0 2.6rem;
 
   .container {
     @include d-flex();
@@ -46,7 +46,7 @@
   z-index: 5;
 
   .carousel__name {
-    @include text($fz: $fz-xxl, $lh: $lh-xl);
+    @include text($fz: $fz-xxl, $lh: $lh-xxl);
     margin-bottom: 1rem;
   }
 

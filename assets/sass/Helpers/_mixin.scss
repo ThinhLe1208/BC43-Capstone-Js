@@ -8,9 +8,10 @@
 }
 
 // display flex
-@mixin d-flex($fd: row, $jc: null, $ai: null) {
+@mixin d-flex($fd: row, $fw: wrap, $jc: null, $ai: null) {
   display: flex;
   flex-direction: $fd;
+  flex-wrap: $fw;
 
   @if ($fd == row) {
     @if ($jc and $ai == null) {
@@ -152,11 +153,13 @@
 // input
 %input-control {
   @include text($fz: $fz-mxl, $fw: $fw-regular);
-  width: 100%;
+  display: inline-block;
+  max-width: 5rem;
   border: none;
   background-color: transparent;
   background-clip: padding-box;
-  padding: 0.5rem 2rem;
+  padding: 0 0.8rem;
+  text-align: center;
 }
 
 // hidde text
