@@ -42,60 +42,63 @@
   $fz: $fz-lg,
   $fw: $fw-light,
   $c: $text-light-c0,
-  $bgc: $bg-orange-c0,
+  $bg: $bg-orange-c0,
   $bd: transparent,
   $br: 0,
   $p: 1.2rem 3.5rem,
   $c-hover: null,
-  $bg-hover: null
+  $bg-hover: null,
+  $eff: true
 ) {
   position: relative;
   font-size: $fz;
   font-weight: $fw;
   color: $c;
-  background-color: $bgc;
+  background: $bg;
   border: $bd;
   border-radius: $br;
   padding: $p;
   transition: all ease-out 0.3s;
   cursor: pointer;
 
-  &::before {
-    content: url("/assets/img/sneakers_1.png");
-    position: absolute;
-    top: 0;
-    bottom: 5rem;
-    left: 0;
-    right: 10rem;
-    opacity: 0;
-    transform: scale(0.07) translate(0, 0) rotate(0deg);
-    transition: all ease-out 0.6s;
-  }
-
-  &::after {
-    content: url("/assets/img/sneakers_3.png");
-    position: absolute;
-    top: 0;
-    bottom: 2rem;
-    left: 4rem;
-    right: 0;
-    opacity: 0;
-    transform: scale(0.07) translate(0, 0) rotate(0deg);
-    transition: all ease-out 0.6s;
-  }
-
-  &:hover {
-    background-image: $bg-gra-c2;
-    transform: scale(1.1);
-
+  @if ($eff) {
     &::before {
-      opacity: 1;
-      transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
+      content: url("/assets/img/sneakers_1.png");
+      position: absolute;
+      top: 0;
+      bottom: 5rem;
+      left: 0;
+      right: 10rem;
+      opacity: 0;
+      transform: scale(0.07) translate(0, 0) rotate(0deg);
+      transition: all ease-out 0.6s;
     }
 
     &::after {
-      opacity: 1;
-      transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
+      content: url("/assets/img/sneakers_3.png");
+      position: absolute;
+      top: 0;
+      bottom: 2rem;
+      left: 4rem;
+      right: 0;
+      opacity: 0;
+      transform: scale(0.07) translate(0, 0) rotate(0deg);
+      transition: all ease-out 0.6s;
+    }
+
+    &:hover {
+      background-image: $bg-gra-c2;
+      transform: scale(1.1);
+
+      &::before {
+        opacity: 1;
+        transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
+      }
+
+      &::after {
+        opacity: 1;
+        transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
+      }
     }
   }
 }

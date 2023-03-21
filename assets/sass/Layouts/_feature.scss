@@ -67,7 +67,7 @@
 
   &:hover {
     height: calc(100% - $buy-btn-height);
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 3.4rem 2.4rem;
 
     h3,
@@ -77,8 +77,13 @@
     }
 
     h3 {
+      font-weight: $fw-semibold;
       transform: translateY(-1rem);
       margin-bottom: 2.4rem;
+    }
+
+    p {
+      line-height: $lh-lg;
     }
   }
 }
@@ -88,7 +93,7 @@
   background-color: $bg-light-c1;
 
   .feature__button {
-    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bgc: $bg-orange-c1, $p: 1.6rem 3.5rem);
+    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bg: $bg-orange-c1, $p: 1.6rem 3.5rem);
   }
 
   .feature__price {

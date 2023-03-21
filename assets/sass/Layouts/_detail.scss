@@ -7,16 +7,35 @@
   }
 
   .detail__img {
+    position: relative;
     width: 35%;
     text-align: center;
 
-    img {
+    & > img {
       width: 34rem;
       height: 34rem;
       object-fit: contain;
       object-position: center;
       background-color: $bg-light-c2;
       padding: 4rem;
+    }
+
+    .detail__img-zoom-container {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: none;
+      width: 24rem;
+      height: 24rem;
+      background-color: $bg-light-c0;
+      border: 1px solid black;
+      overflow: hidden;
+    }
+
+    .detail__img-zoom {
+      width: 200%;
+      height: 200%;
+      object-fit: cover;
     }
   }
 
@@ -61,22 +80,22 @@
     @include d-flex($jc: flex-start);
     margin-bottom: 1rem;
 
-    .detail__decrease-btn {
-      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 1.6rem, $bgc: $bg-gra-c0);
-    }
-
     .detail__number {
       @extend %input-control;
       width: 6rem;
       padding: 0 0 0 2.2rem;
     }
 
+    .detail__decrease-btn {
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 1.6rem, $bg: $bg-gra-c0, $eff: false);
+    }
+
     .detail__increase-btn {
-      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 2rem, $bgc: $bg-gra-c0);
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 2rem, $bg: $bg-gra-c0, $eff: false);
     }
   }
 
   .detail__add-btn {
-    @include button($bgc: $bg-gra-c1);
+    @include button($bg: $bg-gra-c1, $eff: false);
   }
 }

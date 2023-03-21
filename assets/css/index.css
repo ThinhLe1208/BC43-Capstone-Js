@@ -386,7 +386,7 @@ button {
   font-size: 2rem;
   font-weight: 300;
   color: #fff;
-  background-color: #f8b653;
+  background: #f8b653;
   border: transparent;
   border-radius: 0;
   padding: 1.2rem 3.5rem;
@@ -503,7 +503,7 @@ button {
 }
 .feature__item-body:hover {
   height: calc(100% - 5.6rem);
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 3.4rem 2.4rem;
 }
 .feature__item-body:hover h3,
@@ -511,8 +511,12 @@ button {
   color: #fff;
 }
 .feature__item-body:hover h3 {
+  font-weight: 600;
   transform: translateY(-1rem);
   margin-bottom: 2.4rem;
+}
+.feature__item-body:hover p {
+  line-height: 3rem;
 }
 
 .feature__item-footer {
@@ -527,7 +531,7 @@ button {
   font-size: 2.4rem;
   font-weight: 200;
   color: #000;
-  background-color: #e1b067;
+  background: #e1b067;
   border: transparent;
   border-radius: 0;
   padding: 1.6rem 3.5rem;
@@ -587,10 +591,11 @@ button {
   align-items: flex-start;
 }
 .detail .detail__img {
+  position: relative;
   width: 35%;
   text-align: center;
 }
-.detail .detail__img img {
+.detail .detail__img > img {
   width: 34rem;
   height: 34rem;
   -o-object-fit: contain;
@@ -599,6 +604,23 @@ button {
      object-position: center;
   background-color: #f8f8f8;
   padding: 4rem;
+}
+.detail .detail__img .detail__img-zoom-container {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: none;
+  width: 24rem;
+  height: 24rem;
+  background-color: #f5f5f5;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.detail .detail__img .detail__img-zoom {
+  width: 200%;
+  height: 200%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .detail .detail__content {
   width: 65%;
@@ -648,145 +670,43 @@ button {
   align-items: center;
   margin-bottom: 1rem;
 }
+.detail__content .detail__quality .detail__number {
+  width: 6rem;
+  padding: 0 0 0 2.2rem;
+}
 .detail__content .detail__quality .detail__decrease-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
   color: #fff;
-  background-color: linear-gradient(180deg, #6181f3 0%, #7c97f5 99.48%);
+  background: linear-gradient(180deg, #6181f3 0%, #7c97f5 99.48%);
   border: transparent;
   border-radius: 0;
   padding: 0.8rem 1.6rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
 }
-.detail__content .detail__quality .detail__decrease-btn::before {
-  content: url("/assets/img/sneakers_1.png");
-  position: absolute;
-  top: 0;
-  bottom: 5rem;
-  left: 0;
-  right: 10rem;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__quality .detail__decrease-btn::after {
-  content: url("/assets/img/sneakers_3.png");
-  position: absolute;
-  top: 0;
-  bottom: 2rem;
-  left: 4rem;
-  right: 0;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__quality .detail__decrease-btn:hover {
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-  transform: scale(1.1);
-}
-.detail__content .detail__quality .detail__decrease-btn:hover::before {
-  opacity: 1;
-  transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
-}
-.detail__content .detail__quality .detail__decrease-btn:hover::after {
-  opacity: 1;
-  transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
-}
-.detail__content .detail__quality .detail__number {
-  width: 6rem;
-  padding: 0 0 0 2.2rem;
-}
 .detail__content .detail__quality .detail__increase-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
   color: #fff;
-  background-color: linear-gradient(180deg, #6181f3 0%, #7c97f5 99.48%);
+  background: linear-gradient(180deg, #6181f3 0%, #7c97f5 99.48%);
   border: transparent;
   border-radius: 0;
   padding: 0.8rem 2rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
 }
-.detail__content .detail__quality .detail__increase-btn::before {
-  content: url("/assets/img/sneakers_1.png");
-  position: absolute;
-  top: 0;
-  bottom: 5rem;
-  left: 0;
-  right: 10rem;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__quality .detail__increase-btn::after {
-  content: url("/assets/img/sneakers_3.png");
-  position: absolute;
-  top: 0;
-  bottom: 2rem;
-  left: 4rem;
-  right: 0;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__quality .detail__increase-btn:hover {
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-  transform: scale(1.1);
-}
-.detail__content .detail__quality .detail__increase-btn:hover::before {
-  opacity: 1;
-  transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
-}
-.detail__content .detail__quality .detail__increase-btn:hover::after {
-  opacity: 1;
-  transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
-}
 .detail__content .detail__add-btn {
   position: relative;
   font-size: 2rem;
   font-weight: 300;
   color: #fff;
-  background-color: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #d017ee 89.71%);
+  background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #d017ee 89.71%);
   border: transparent;
   border-radius: 0;
   padding: 1.2rem 3.5rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
-}
-.detail__content .detail__add-btn::before {
-  content: url("/assets/img/sneakers_1.png");
-  position: absolute;
-  top: 0;
-  bottom: 5rem;
-  left: 0;
-  right: 10rem;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__add-btn::after {
-  content: url("/assets/img/sneakers_3.png");
-  position: absolute;
-  top: 0;
-  bottom: 2rem;
-  left: 4rem;
-  right: 0;
-  opacity: 0;
-  transform: scale(0.07) translate(0, 0) rotate(0deg);
-  transition: all ease-out 0.6s;
-}
-.detail__content .detail__add-btn:hover {
-  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
-  transform: scale(1.1);
-}
-.detail__content .detail__add-btn:hover::before {
-  opacity: 1;
-  transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
-}
-.detail__content .detail__add-btn:hover::after {
-  opacity: 1;
-  transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
 }

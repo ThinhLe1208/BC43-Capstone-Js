@@ -88,6 +88,4 @@ window.onload = async () => {
             0: 1
         }
     });
-}
-
-
+};

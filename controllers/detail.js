@@ -1,6 +1,6 @@
 const detail = document.querySelector('.detail .container');
 const related = document.querySelector('.feature__content');
-console.log(related);
+
 const renderDetail = async (id) => {
     const product = await getById(id);
 
@@ -12,6 +12,9 @@ const renderDetail = async (id) => {
     detail.innerHTML = `
     <div class="detail__img">
         <img src="${product.image}">
+        <div class="detail__img-zoom-container">
+            <img class="detail__img-zoom" src="${product.image}">
+        </div>
     </div>
 
     <div class="detail__content">
@@ -58,10 +61,25 @@ const renderRelated = (arr) => {
     related.innerHTML = htmlString.join('');
 };
 
-window.onload = () => {
+window.onload = async () => {
     // var param = new URL(window.location.href or path)
     const URLparam = new URLSearchParams(window.location.search);
     const myParam = URLparam.get('id');
 
-    renderDetail(myParam);
+    await renderDetail(myParam);
+
+    // Tinhs năng phóng to hình ảnh
+    const detailImg = document.querySelector('.detail__img > img');
+    const detailImgZoomCon = document.querySelector('.detail__img-zoom-container');
+    const detailImgZoom = document.querySelector('.detail__img-zoom');
+
+    detailImg.onmousemove = (e) => {
+        detailImgZoomCon.style.display = 'block';
+        detailImgZoom.style.objectPosition = `${-e.offsetX}px ${-e.offsetY}px`;
+    };
+
+    detailImg.onmouseout = () => {
+        detailImgZoomCon.style.display = 'none';
+    };
 };
+
