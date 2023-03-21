@@ -5,15 +5,20 @@
     @include d-flex(column);
   }
 
+  .row {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
   .feature__title {
-    @include text($fz-xxl, $fw-regular);
+    @include text($fz-xxl, $fw-regular, $lh: $lh-xl);
     margin-bottom: 9rem;
   }
 
   .feature__item {
-    // width: 30.8rem;
+    position: relative;
     background: #f8f8f8;
-    transition: all linear 0.1s;
+    transition: all linear 0.2s;
 
     &:hover {
       transform: translateY(-1rem);
@@ -22,25 +27,59 @@
       .feature__price {
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       }
+
+      img {
+        transform: scale(1.2) rotate(-16deg);
+      }
     }
   }
 }
 
 .feature__item-header {
-  padding: 5rem 4rem 2rem;
+  padding: 1.6rem 4rem 0;
+  margin-bottom: 7.6rem;
   text-align: center;
+
+  img {
+    transition: all linear 0.2s;
+  }
 }
 
 .feature__item-body {
+  position: absolute;
+  inset: auto 0 $buy-btn-height 0;
+  height: 7.6rem;
   padding: 1.2rem 2.4rem;
+  transition: all linear 0.2s;
 
   h3 {
-    @include text($fz-xl, $fw-light);
+    @include text($fz: $fz-xl, $lh: $lh-lg);
+    @extend %hide-text;
     margin-bottom: 0.8rem;
+    transform: translateY(-1.4rem);
   }
 
   p {
-    @include text($fz-lg, $fw-light, $text-light-c2);
+    @include text($fz: $fz-lg, $c: $text-light-c2);
+    @extend %hide-text;
+    transform: translateY(-1.4rem);
+  }
+
+  &:hover {
+    height: calc(100% - $buy-btn-height);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3.4rem 2.4rem;
+
+    h3,
+    p {
+      color: $text-light-c0;
+      @extend %not-hide-text;
+    }
+
+    h3 {
+      transform: translateY(-1rem);
+      margin-bottom: 2.4rem;
+    }
   }
 }
 
@@ -49,7 +88,7 @@
   background-color: $bg-light-c1;
 
   .feature__button {
-    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bg: $bg-orange-c1, $p: 1.6rem 3.5rem);
+    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bgc: $bg-orange-c1, $p: 1.6rem 3.5rem);
   }
 
   .feature__price {

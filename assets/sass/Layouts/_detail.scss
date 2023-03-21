@@ -1,5 +1,5 @@
 .detail {
-  padding: 6rem 0 3rem;
+  padding: 16rem 0 3rem;
 
   .container {
     @include d-flex($ai: flex-start); // error: @mixin d-flex khong nhan flex-start
@@ -62,7 +62,7 @@
     margin-bottom: 1rem;
 
     .detail__decrease-btn {
-      @include button($fz: $fz-xl + 0.6rem, $fw: $fw-regular, $p: 0.8rem 1.6rem, $bg: $bg-gra-c0);
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 1.6rem, $bgc: $bg-gra-c0);
     }
 
     .detail__number {
@@ -72,11 +72,11 @@
     }
 
     .detail__increase-btn {
-      @include button($fz: $fz-xl + 0.6rem, $fw: $fw-regular, $p: 0.8rem 2rem, $bg: $bg-gra-c0);
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 2rem, $bgc: $bg-gra-c0);
     }
   }
 
   .detail__add-btn {
-    @include button($bg: $bg-gra-c1);
+    @include button($bgc: $bg-gra-c1);
   }
 }
