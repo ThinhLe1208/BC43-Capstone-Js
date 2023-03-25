@@ -1,5 +1,7 @@
+const carousel = document.querySelector('.self-build-carousel');
+const feature = document.querySelector('.feature__content');
+
 const renderCarousel = async () => {
-    const carousel = document.querySelector('.self-build-carousel');
     const products = await getProducts();
 
     const htmlString = products.map((product) => {
@@ -21,7 +23,6 @@ const renderCarousel = async () => {
 };
 
 const renderFeature = async () => {
-    const feature = document.querySelector('.feature__content');
     const products = await getProducts();
 
     // const htmlString = products.map((product) => {
@@ -71,12 +72,16 @@ const renderFeature = async () => {
     feature.innerHTML = htmlString;
 };
 
+const delay = (time) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, time);
+    });
+};
+
 window.onload = async () => {
     await renderCarousel();
     await renderFeature();
-
     // await delay(1000);
-
     Carousel({
         selector: ".self-build-carousel",
         responsive: {

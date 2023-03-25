@@ -44,13 +44,11 @@
   font-weight: 400;
   line-height: 2.4rem;
   color: #000;
-  display: inline-block;
-  max-width: 5rem;
+  width: 100%;
   border: none;
   background-color: transparent;
   background-clip: padding-box;
-  padding: 0 0.8rem;
-  text-align: center;
+  padding: 0.5rem 2rem;
 }
 
 .feature__item-body p, .feature__item-body h3 {
@@ -276,7 +274,6 @@ button {
 .header__top > .container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   justify-content: space-between;
@@ -289,7 +286,6 @@ button {
 .header__top .header__actions {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -308,7 +304,6 @@ button {
 .header__bottom > .container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   height: 100%;
@@ -316,7 +311,6 @@ button {
 .header__bottom .header__nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -330,12 +324,11 @@ button {
 
 .carousel {
   background: url("/assets/img/slider_bg.png") bottom/contain no-repeat;
-  padding: 10rem 0 2.6rem;
+  padding-top: 10rem;
 }
 .carousel .container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -344,7 +337,6 @@ button {
 .carousel .carousel__item {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 10rem;
@@ -443,12 +435,11 @@ button {
 }
 
 .feature {
-  padding: 2rem 0;
+  padding: 4.6rem 0;
 }
 .feature .container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -531,7 +522,6 @@ button {
 .feature__item-footer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #dedddc;
@@ -591,19 +581,18 @@ button {
 }
 
 .detail {
-  padding: 16rem 0 4rem;
+  padding: 16rem 0 3rem;
 }
 .detail .container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   align-items: flex-start;
 }
 .detail .detail__img {
   position: relative;
-  width: 42rem;
+  width: 35%;
   text-align: center;
 }
 .detail .detail__img > img {
@@ -634,70 +623,58 @@ button {
      object-fit: cover;
 }
 .detail .detail__content {
-  width: calc(100% - 42rem);
+  width: 65%;
   padding: 0 10rem;
 }
 
 .detail__content .detail__name {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 300;
-  line-height: 3.6rem;
+  line-height: 2.4rem;
   color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 .detail__content .detail__decription {
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 2rem;
+  line-height: 2.4rem;
   color: #140101;
-  margin-bottom: 2rem;
+  padding-right: 10rem;
+  margin-bottom: 3rem;
 }
 .detail__content .detail__label-size {
   font-size: 2.4rem;
   font-weight: 500;
-  line-height: 3rem;
+  line-height: 2.4rem;
   color: #1ed90e;
   margin-bottom: 2rem;
 }
 .detail__content .detail__sizes {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  margin-top: -1rem;
   margin-bottom: 2.6rem;
 }
-.detail__content .detail__sizes .detail__size {
-  margin-top: 1rem;
-}
 .detail__content .detail__price {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 600;
-  line-height: 3.6rem;
+  line-height: 2.4rem;
   color: #fc0303;
-  margin-bottom: 2rem;
+  margin-bottom: 2.6rem;
 }
 .detail__content .detail__quality {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
 }
 .detail__content .detail__quality .detail__number {
-  /* Chrome, Safari, Edge, Opera */
-  /* Firefox */
+  width: 6rem;
+  padding: 0 0 0 2.2rem;
 }
-.detail__content .detail__quality .detail__number::-webkit-outer-spin-button, .detail__content .detail__quality .detail__number::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.detail__content .detail__quality .detail__number[type=number] {
-  -moz-appearance: textfield;
-}
-.detail__content .detail__quality .detail__increase-btn {
+.detail__content .detail__quality .detail__decrease-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
@@ -709,7 +686,7 @@ button {
   transition: all ease-out 0.3s;
   cursor: pointer;
 }
-.detail__content .detail__quality .detail__decrease-btn {
+.detail__content .detail__quality .detail__increase-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
@@ -720,22 +697,16 @@ button {
   padding: 0.8rem 2rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
-  margin-top: -0.2rem;
 }
 .detail__content .detail__add-btn {
   position: relative;
-  font-size: 2.4rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 300;
   color: #fff;
   background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #d017ee 89.71%);
   border: transparent;
   border-radius: 0;
-  padding: 1.8rem 2.8rem;
+  padding: 1.2rem 3.5rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
-  background-size: 100%;
-  transition: all linear 0.3s;
-}
-.detail__content .detail__add-btn:hover {
-  background-size: 300%;
 }
