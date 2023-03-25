@@ -4,7 +4,7 @@ function Validation(){
     if (value.trim() === "") {
       document.querySelector(error).innerHTML = `Vui lòng nhập email !`;
       return false;
-    } else if (value.match(pattern)) {
+    } else if (value.trim().match(pattern)) {
       document.querySelector(icon).innerHTML = `<i class="fa-solid fa-check"></i>`;
       document.querySelector(error).innerHTML ='';
       return true;
@@ -18,7 +18,7 @@ function Validation(){
     if (value.trim() === "") {
       document.querySelector(error).innerHTML = `Vui lòng nhập Mật khẩu !`;
       return false;
-    } else if (value.match(pattern)) {
+    } else if (value.trim().match(pattern)) {
       document.querySelector(icon).innerHTML = `<i class="fa-solid fa-check"></i>`;
       document.querySelector(error).innerHTML ='';
       return true;
@@ -46,7 +46,7 @@ function Validation(){
     if (value.trim() === "") {
       document.querySelector(error).innerHTML = `Vui lòng nhập họ tên !`;
       return false;
-    } else if (value.match(pattern)) {
+    } else if (value.trim().match(pattern)) {
       document.querySelector(icon).innerHTML = `<i class="fa-solid fa-check"></i>`;
       document.querySelector(error).innerHTML ='';
       return true;
@@ -57,7 +57,7 @@ function Validation(){
   }
   this.checkGender = (value, error)=>{
     if(value === ''){
-      document.querySelector(error).innerHTML = `Vui lòng nhập chọn trường này!`;
+      document.querySelector(error).innerHTML = `Vui lòng chọn trường này!`;
       return false;
     }else{
       document.querySelector(error).innerHTML ='';
