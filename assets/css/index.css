@@ -1,5 +1,4 @@
-.carousel .right-btn,
-.carousel .left-btn {
+.carousel .right-btn, .carousel .left-btn {
   position: absolute;
   top: 50%;
   width: 10rem;
@@ -9,8 +8,7 @@
   box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-.carousel .right-btn::after,
-.carousel .left-btn::after {
+.carousel .right-btn::after, .carousel .left-btn::after {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -46,15 +44,16 @@
   font-weight: 400;
   line-height: 2.4rem;
   color: #000;
-  width: 100%;
+  display: inline-block;
+  max-width: 5rem;
   border: none;
   background-color: transparent;
   background-clip: padding-box;
-  padding: 0.5rem 2rem;
+  padding: 0 0.8rem;
+  text-align: center;
 }
 
-.feature__item-body p,
-.feature__item-body h3 {
+.feature__item-body p, .feature__item-body h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -67,6 +66,22 @@
   text-overflow: clip;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes drop {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -210,6 +225,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media only screen and (max-width: 64em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Inter", sans-serif;
@@ -252,7 +272,6 @@ button {
 }
 
 .col-4 {
-  flex: 1 0 auto;
   width: 33.3333333333%;
 }
 
@@ -277,6 +296,7 @@ button {
 .header__top > .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   justify-content: space-between;
@@ -284,11 +304,12 @@ button {
 }
 .header__top .header__logo img {
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 .header__top .header__actions {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -307,6 +328,7 @@ button {
 .header__bottom > .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   height: 100%;
@@ -314,6 +336,7 @@ button {
 .header__bottom .header__nav {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -327,17 +350,43 @@ button {
 
 .carousel {
   background: url("/assets/img/slider_bg.png") bottom/contain no-repeat;
-  padding-top: 10rem;
+  padding: 10rem 0 2.6rem;
 }
 .carousel .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   position: relative;
   height: 53rem;
 }
-.carousel .carousel__item {
+.carousel .skeleton-spinner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  cursor: wait;
+  z-index: 888;
+}
+.carousel .skeleton-spinner img {
+  width: 6%;
+}
+.carousel .skeleton-spinner img + img {
+  margin-left: 2rem;
+}
+.carousel .skeleton-spinner img:first-child {
+  transform: translateY(-6px);
+}
+.carousel .items-container {
+  animation: fadeIn linear 1s;
+}
+.carousel .items-container .carousel__item {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -361,6 +410,19 @@ button {
 .carousel .right-btn:hover {
   transform: translateY(-50%) rotate(90deg) translateY(-0.8rem);
 }
+.carousel .dots {
+  height: 1.5rem;
+  width: 9rem;
+}
+.carousel .dots .dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.13);
+}
+.carousel .dots .dot.active {
+  background-color: #dedddc;
+}
 
 .carousel__img {
   width: 70%;
@@ -368,8 +430,11 @@ button {
 
 .carousel__info {
   width: 30%;
-  position: relative;
-  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 .carousel__info .carousel__name {
   font-size: 4rem;
@@ -439,11 +504,12 @@ button {
 }
 
 .feature {
-  padding: 4.6rem 0;
+  padding: 2rem 0;
 }
 .feature .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -456,21 +522,30 @@ button {
   font-weight: 400;
   line-height: 4.8rem;
   color: #000;
+  text-align: center;
   margin-bottom: 9rem;
 }
 .feature .feature__item {
   position: relative;
   background: #f8f8f8;
+  width: 307px;
+  height: 369px;
   transition: all linear 0.2s;
 }
-.feature .feature__item:hover {
+.feature .feature__item.skeleton {
+  cursor: wait;
+}
+.feature .feature__item.skeleton a {
+  pointer-events: none;
+}
+.feature .feature__item:not(.skeleton):hover {
   transform: translateY(-1rem);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.feature .feature__item:hover .feature__price {
+.feature .feature__item:not(.skeleton):hover .feature__price {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.feature .feature__item:hover img {
+.feature .feature__item:not(.skeleton):hover img {
   transform: scale(1.2) rotate(-16deg);
 }
 
@@ -489,6 +564,7 @@ button {
   height: 7.6rem;
   padding: 1.2rem 2.4rem;
   transition: all linear 0.2s;
+  overflow: hidden;
 }
 .feature__item-body h3 {
   font-size: 2.4rem;
@@ -517,7 +593,7 @@ button {
 .feature__item-body:hover h3 {
   font-weight: 600;
   transform: translateY(-1rem);
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.4rem;
 }
 .feature__item-body:hover p {
   line-height: 3rem;
@@ -526,9 +602,11 @@ button {
 .feature__item-footer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  inset: auto 0 0;
   background-color: #dedddc;
 }
 .feature__item-footer .feature__button {
@@ -586,27 +664,28 @@ button {
 }
 
 .detail {
-  padding: 16rem 0 3rem;
+  padding: 16rem 0 4rem;
 }
 .detail .container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   align-items: flex-start;
 }
 .detail .detail__img {
   position: relative;
-  width: 35%;
+  width: 42rem;
   text-align: center;
 }
 .detail .detail__img > img {
   width: 34rem;
   height: 34rem;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   -o-object-position: center;
-  object-position: center;
+     object-position: center;
   background-color: #f8f8f8;
   padding: 4rem;
 }
@@ -625,61 +704,73 @@ button {
   width: 200%;
   height: 200%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 .detail .detail__content {
-  width: 65%;
+  width: calc(100% - 42rem);
   padding: 0 10rem;
 }
 
 .detail__content .detail__name {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 300;
-  line-height: 2.4rem;
+  line-height: 3.6rem;
   color: #000;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 }
 .detail__content .detail__decription {
   font-size: 1.6rem;
   font-weight: 400;
-  line-height: 2.4rem;
+  line-height: 2rem;
   color: #140101;
-  padding-right: 10rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .detail__content .detail__label-size {
   font-size: 2.4rem;
   font-weight: 500;
-  line-height: 2.4rem;
+  line-height: 3rem;
   color: #1ed90e;
   margin-bottom: 2rem;
 }
 .detail__content .detail__sizes {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  margin-top: -1rem;
   margin-bottom: 2.6rem;
 }
+.detail__content .detail__sizes .detail__size {
+  margin-top: 1rem;
+}
 .detail__content .detail__price {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 600;
-  line-height: 2.4rem;
+  line-height: 3.6rem;
   color: #fc0303;
-  margin-bottom: 2.6rem;
+  margin-bottom: 2rem;
 }
 .detail__content .detail__quality {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 1rem;
 }
 .detail__content .detail__quality .detail__number {
-  width: 6rem;
-  padding: 0 0 0 2.2rem;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
 }
-.detail__content .detail__quality .detail__decrease-btn {
+.detail__content .detail__quality .detail__number::-webkit-outer-spin-button, .detail__content .detail__quality .detail__number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.detail__content .detail__quality .detail__number[type=number] {
+  -moz-appearance: textfield;
+}
+.detail__content .detail__quality .detail__increase-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
@@ -691,7 +782,7 @@ button {
   transition: all ease-out 0.3s;
   cursor: pointer;
 }
-.detail__content .detail__quality .detail__increase-btn {
+.detail__content .detail__quality .detail__decrease-btn {
   position: relative;
   font-size: 3rem;
   font-weight: 400;
@@ -702,20 +793,21 @@ button {
   padding: 0.8rem 2rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
+  margin-top: -0.2rem;
 }
 .detail__content .detail__add-btn {
   position: relative;
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 2.4rem;
+  font-weight: 500;
   color: #fff;
   background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #d017ee 89.71%);
   border: transparent;
   border-radius: 0;
-  padding: 1.2rem 3.5rem;
+  padding: 1.8rem 2.8rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
   background-size: 100%;
-  transition: all linear 0.3s;
+  transition: all linear 1s;
 }
 .detail__content .detail__add-btn:hover {
   background-size: 300%;
