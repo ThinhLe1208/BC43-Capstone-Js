@@ -13,26 +13,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- Main Css -->
-    <link rel="stylesheet" href="./assets/css/detail.min.css">
+    <link rel="stylesheet" href="/assets/css/index.min.css">
 </head>
 
 <body>
+    <header class="header">
 
+        <div class="header__top">
+            <div class="container">
+                <a href="/index.html" class="header__logo">
+                    <img src="./assets/img/logo.png" alt="logo">
+                </a>
+                <div class="header__actions">
+                    <a href="#">
+                        <img src="./assets/img/cart.png" alt="cart">
+                    </a>
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header__bottom">
+            <div class="container">
+                <ul class="header__nav">
+                    <li><a class="header__item" href="/index.html">Home</a></li>
+                    <li><a class="header__item" href="#">Men</a></li>
+                    <li><a class="header__item" href="#">Woman</a></li>
+                    <li><a class="header__item" href="#">Kid</a></li>
+                    <li><a class="header__item" href="#">Sport</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <section class="detail">
+        <div class="container">
+            <!-- render -->
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="container">
+            <div class="feature__title">-Realate Product-</div>
+            <ul class="feature__content row">
+                <!-- render -->
+            </ul>
+        </div>
+    </section>
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
     <!-- API -->
-    <script src="/customer/controller/api.js"></script>
+    <script src="/controllers/api.js"></script>
+
+    <!-- Utilities -->
+    <script src="./util/utilities.js"></script>
 
     <!-- Main JS -->
-    <script src="/customer/controller/detail.js"></script>
+    <script src="/controllers/detail.js"></script>
 </body>
 
 </html>

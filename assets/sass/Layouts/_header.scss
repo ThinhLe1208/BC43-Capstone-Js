@@ -1,0 +1,50 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.header__top {
+  height: 5rem;
+  background-color: $bg-dark-c0;
+
+  > .container {
+    @include d-flex(); //error
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .header__logo {
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .header__actions {
+    @include d-flex();
+
+    > a {
+      @include text($c: $text-light-c1);
+      margin-left: 2rem;
+    }
+  }
+}
+
+.header__bottom {
+  height: 5rem;
+  background-color: $bg-light-c0;
+
+  > .container {
+    @include d-flex();
+    height: 100%;
+  }
+
+  .header__nav {
+    @include d-flex();
+  }
+
+  .header__item {
+    @include text($fz-lg, $fw-regular);
+    margin-right: 26px;
+  }
+}

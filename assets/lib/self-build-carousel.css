@@ -1,0 +1,46 @@
+.self-build-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.items-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.item {
+  height: 100%;
+  flex: 1 0 auto;
+  overflow: hidden;
+}
+
+img.item {
+  object-fit: contain;
+}
+
+.left-btn,
+.right-btn {
+  position: absolute;
+  top: 50%;
+  padding: 10px 20px;
+  z-index: 10;
+}
+
+.left-btn {
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.right-btn {
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.animation {
+  transition: margin linear 0.5s;
+}

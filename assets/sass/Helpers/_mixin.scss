@@ -1,21 +1,23 @@
 // text
 // $fz: 1.4rem, $fw: 300, $c: #000
-@mixin text($fz: $fz-md, $fw: $fw-light, $c: $text-dark-c0) {
+@mixin text($fz: $fz-md, $fw: $fw-light, $lh: $lh-md, $c: $text-dark-c0) {
   font-size: $fz;
   font-weight: $fw;
+  line-height: $lh;
   color: $c;
 }
 
 // display flex
-@mixin d-flex($fd: row, $jc: null, $ai: null) {
+@mixin d-flex($fd: row, $fw: wrap, $jc: null, $ai: null) {
   display: flex;
   flex-direction: $fd;
+  flex-wrap: $fw;
 
   @if ($fd == row) {
-    @if ($jc && $ai == null) {
+    @if ($jc and $ai == null) {
       justify-content: $jc;
       align-items: $direction-row-align-item;
-    } @else if($jc == null && $ai) {
+    } @else if($jc == null and $ai) {
       justify-content: $direction-row-justify-content;
       align-items: $ai;
     } @else {
@@ -23,10 +25,10 @@
       align-items: $direction-row-align-item;
     }
   } @else if ($fd == column) {
-    @if ($jc && $ai == null) {
+    @if ($jc and $ai == null) {
       justify-content: $jc;
       align-items: $direction-col-align-item;
-    } @else if($jc == null && $ai) {
+    } @else if($jc == null and $ai) {
       justify-content: $direction-col-justify-content;
       align-items: $ai;
     } @else {
@@ -46,8 +48,10 @@
   $br: 0,
   $p: 1.2rem 3.5rem,
   $c-hover: null,
-  $bg-hover: null
+  $bg-hover: null,
+  $eff: true
 ) {
+  position: relative;
   font-size: $fz;
   font-weight: $fw;
   color: $c;
@@ -55,22 +59,59 @@
   border: $bd;
   border-radius: $br;
   padding: $p;
+  transition: all ease-out 0.3s;
   cursor: pointer;
 
-  @if ($c-hover && $bg-hover) {
+  @if ($eff) {
+    &::before {
+      content: url("/assets/img/sneakers_1.png");
+      position: absolute;
+      top: 0;
+      bottom: 5rem;
+      left: 0;
+      right: 10rem;
+      opacity: 0;
+      transform: scale(0.07) translate(0, 0) rotate(0deg);
+      transition: all ease-out 0.6s;
+    }
+
+    &::after {
+      content: url("/assets/img/sneakers_3.png");
+      position: absolute;
+      top: 0;
+      bottom: 2rem;
+      left: 4rem;
+      right: 0;
+      opacity: 0;
+      transform: scale(0.07) translate(0, 0) rotate(0deg);
+      transition: all ease-out 0.6s;
+    }
+
     &:hover {
-      color: $c-hover;
-      background: $bg-hover;
+      background-image: $bg-gra-c2;
+      transform: scale(1.1);
+
+      &::before {
+        opacity: 1;
+        transform: scale(0.1) translate(-46rem, -16rem) rotate(-16deg);
+      }
+
+      &::after {
+        opacity: 1;
+        transform: scale(0.1) translate(20rem, 14rem) rotate(-26deg);
+      }
     }
   }
 }
 
 // arrow button
 %arrow-button {
-  position: relative;
+  position: absolute;
+  top: 50%;
   width: 10rem;
   height: 6rem;
   overflow: hidden;
+  border: none;
   box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 
@@ -79,8 +120,8 @@
     left: 50%;
     bottom: 0;
     content: "";
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     background-color: transparent;
     transform: translate(-50%, 50%) rotate(45deg);
     border: 1px solid rgba(0, 0, 0, 0.24);
@@ -111,10 +152,26 @@
 
 // input
 %input-control {
-  @include text($fz: $fz-xl + 0.6rem, $fw: $fw-regular);
-  width: 100%;
+  @include text($fz: $fz-mxl, $fw: $fw-regular);
+  display: inline-block;
+  max-width: 5rem;
   border: none;
   background-color: transparent;
   background-clip: padding-box;
-  padding: 0.5rem 2rem;
+  padding: 0 0.8rem;
+  text-align: center;
+}
+
+// hidde text
+%hide-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// hidde text
+%not-hide-text {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }

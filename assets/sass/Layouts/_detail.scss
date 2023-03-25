@@ -1,0 +1,119 @@
+.detail {
+  padding: 16rem 0 4rem;
+
+  .container {
+    @include d-flex($ai: flex-start); // error: @mixin d-flex khong nhan flex-start
+    align-items: flex-start;
+  }
+
+  .detail__img {
+    position: relative;
+    width: $detail-img-width;
+    text-align: center;
+
+    & > img {
+      width: 34rem;
+      height: 34rem;
+      object-fit: contain;
+      object-position: center;
+      background-color: $bg-light-c2;
+      padding: 4rem;
+    }
+
+    .detail__img-zoom-container {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: none;
+      width: 24rem;
+      height: 24rem;
+      background-color: $bg-light-c0;
+      border: 1px solid black;
+      overflow: hidden;
+    }
+
+    .detail__img-zoom {
+      width: 200%;
+      height: 200%;
+      object-fit: cover;
+    }
+  }
+
+  .detail__content {
+    width: calc(100% - $detail-img-width);
+    padding: 0 10rem;
+  }
+}
+
+.detail__content {
+  .detail__name {
+    @include text($fz-mxl, $lh: $lh-xl);
+    margin-bottom: 1rem;
+  }
+
+  .detail__decription {
+    @include text($fz: $fz-md, $fw: $fw-regular, $lh: $lh-sm, $c: $text-dark-c2);
+    margin-bottom: 2rem;
+  }
+
+  .detail__label-size {
+    @include text($fz: $fz-xl, $fw: $fw-medium, $lh: $lh-lg, $c: $text-green-c0);
+    margin-bottom: 2rem;
+  }
+
+  .detail__sizes {
+    @include d-flex($jc: flex-start);
+    margin-top: -1rem;
+    margin-bottom: 2.6rem;
+
+    .detail__size {
+      @extend %badge;
+      margin-top: 1rem;
+    }
+  }
+
+  .detail__price {
+    @include text($fz-mxl, $fw: $fw-semibold, $lh: $lh-xl, $c: $text-red-c0);
+    margin-bottom: 2rem;
+  }
+
+  .detail__quality {
+    @include d-flex($jc: flex-start);
+    margin-bottom: 1rem;
+
+    .detail__number {
+      @extend %input-control;
+
+      /* Chrome, Safari, Edge, Opera */
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+
+    .detail__increase-btn {
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 1.6rem, $bg: $bg-gra-c0, $eff: false);
+    }
+
+    .detail__decrease-btn {
+      @include button($fz: $fz-mxl, $fw: $fw-regular, $p: 0.8rem 2rem, $bg: $bg-gra-c0, $eff: false);
+      margin-top: -0.2rem;
+    }
+  }
+
+  .detail__add-btn {
+    @include button($fz: $fz-xl, $fw: $fw-medium, $p: 1.8rem 2.8rem, $bg: $bg-gra-c1, $eff: false);
+    background-size: 100%;
+    transition: all linear 0.3s;
+
+    &:hover {
+      background-size: 300%;
+    }
+  }
+}
