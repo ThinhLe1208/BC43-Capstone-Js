@@ -1,4 +1,5 @@
-.carousel .right-btn, .carousel .left-btn {
+.carousel .right-btn,
+.carousel .left-btn {
   position: absolute;
   top: 50%;
   width: 10rem;
@@ -8,7 +9,8 @@
   box-shadow: 0 16px 10px -17px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
-.carousel .right-btn::after, .carousel .left-btn::after {
+.carousel .right-btn::after,
+.carousel .left-btn::after {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -51,7 +53,8 @@
   padding: 0.5rem 2rem;
 }
 
-.feature__item-body p, .feature__item-body h3 {
+.feature__item-body p,
+.feature__item-body h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -281,7 +284,7 @@ button {
 }
 .header__top .header__logo img {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .header__top .header__actions {
   display: flex;
@@ -337,6 +340,7 @@ button {
 .carousel .carousel__item {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 0 10rem;
@@ -522,6 +526,7 @@ button {
 .feature__item-footer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   background-color: #dedddc;
@@ -599,9 +604,9 @@ button {
   width: 34rem;
   height: 34rem;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   background-color: #f8f8f8;
   padding: 4rem;
 }
@@ -620,7 +625,7 @@ button {
   width: 200%;
   height: 200%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .detail .detail__content {
   width: 65%;
@@ -709,4 +714,9 @@ button {
   padding: 1.2rem 3.5rem;
   transition: all ease-out 0.3s;
   cursor: pointer;
+  background-size: 100%;
+  transition: all linear 0.3s;
+}
+.detail__content .detail__add-btn:hover {
+  background-size: 300%;
 }
