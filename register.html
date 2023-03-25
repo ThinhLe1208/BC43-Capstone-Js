@@ -42,7 +42,7 @@
         </div>
         <div class="container">
             <nav class="menu">
-                <a href="#" class="menu-link">Home</a>
+                <a href="/index.html" class="menu-link">Home</a>
                 <a href="#" class="menu-link">Men</a>
                 <a href="#" class="menu-link">Woman</a>
                 <a href="#" class="menu-link">Kid</a>
@@ -60,19 +60,19 @@
                     <div class="input-focus-effect ">
                         <div class="error-email"></div>
                         <span class="icon-email"></span>
-                        <input type="text" placeholder=" " id="email"/>
+                        <input type="text" placeholder=" " id="email" />
                         <label>Email</label>
                     </div>
                     <div class="input-focus-effect ">
                         <div class="error-password"></div>
                         <span class="icon-password"></span>
-                        <input type="password" placeholder=" " id="password"/>
+                        <input type="password" placeholder=" " id="password" />
                         <label>Password</label>
                     </div>
                     <div class="input-focus-effect ">
                         <div class="error-password1"></div>
                         <span class="icon-password1"></span>
-                        <input type="password" placeholder=" " id="password1"/>
+                        <input type="password" placeholder=" " id="password1" />
                         <label>Password Confirm</label>
                     </div>
                 </div>
@@ -80,20 +80,20 @@
                     <div class="input-focus-effect ">
                         <div class="error-name"></div>
                         <span class="icon-name"></span>
-                        <input type="text" placeholder=" " id="name"/>
+                        <input type="text" placeholder=" " id="name" />
                         <label>Name</label>
                     </div>
                     <div class="input-focus-effect ">
                         <div class="error-phone"></div>
                         <span class="icon-phone"></span>
-                        <input type="number" placeholder=" " id="phone"/>
+                        <input type="number" placeholder=" " id="phone" />
                         <label>Phone</label>
                     </div>
                     <div class="input-checkbox">
                         <span>Gender</span>
-                        <input type="radio" value="true" name="type" /> 
+                        <input type="radio" value="true" name="type" />
                         <span>Male</span>
-                        <input type="radio" value="false" name="type"/>
+                        <input type="radio" value="false" name="type" />
                         <span>Female</span>
                         <div class="error"></div>
                     </div>
@@ -153,21 +153,13 @@
         </div>
     </footer>
 
-
-
-
     <!-- bootstrap -->
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
-    <!-- API -->
-    <script src="/controllers/api.js"></script>
-
-    <!-- validation -->
-    <script src="./until/validation.js"></script>
     <!-- Main JS -->
-    <script src="/controllers/register.js"></script>
+    <script type="module" src="/controllers/register.js"></script>
 </body>
 
 </html>

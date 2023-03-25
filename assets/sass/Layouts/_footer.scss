@@ -1,0 +1,35 @@
+footer {
+  .footer-content {
+    background-color: #fafafa;
+    .footer-list {
+      padding: 3rem 0;
+      width: 100%;
+      display: flex;
+      .footer-item {
+        width: calc(100% / 3 - 2rem);
+        padding: 0 2rem;
+        margin-right: 2rem;
+        border-right: 1px solid #999;
+        line-height: 2.2rem;
+        h3 {
+          font-size: 2rem;
+          font-weight: 500;
+          margin-bottom: 1.5rem;
+        }
+        a {
+          display: block;
+          padding-top: 1rem;
+          margin: 0;
+          color: #e19291;
+          bottom: 0;
+        }
+      }
+      .footer-item:last-child {
+        border-right: none;
+      }
+    }
+  }
+  .footer-content:last-child {
+    background-color: #ececec;
+  }
+}

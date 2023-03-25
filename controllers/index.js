@@ -7,7 +7,7 @@ window.onload = async () => {
     const data = await getProducts();
 
     // Giả lập mạng yếu
-    await delay(1000);
+    // await delay(1000);
 
     hideLoadingCarousel();
 

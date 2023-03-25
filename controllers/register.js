@@ -1,19 +1,22 @@
+import Validation from '/models/Validation.js';
+import { getRegister } from '/models/api.js';
+
 //hover line menu
 const links = [...document.querySelectorAll(".menu-link")];
-links.forEach((item)=> item.addEventListener("mouseenter", handleHoveerLine));
+links.forEach((item) => item.addEventListener("mouseenter", handleHoveerLine));
 const line = document.createElement("div");
 line.className = 'line-effect';
 document.body.appendChild(line);
-function handleHoveerLine(e){
-  const {left, width, top, height} = e.target.getBoundingClientRect();
-  line.style.width =`${width}px`;
-  line.style.left =`${left}px`;
-  line.style.top =`${top + height + 5}px`;
+function handleHoveerLine(e) {
+  const { left, width, top, height } = e.target.getBoundingClientRect();
+  line.style.width = `${width}px`;
+  line.style.left = `${left}px`;
+  line.style.top = `${top + height + 5}px`;
 }
 const menu = document.querySelector(".menu");
-  menu.addEventListener("mouseleave", function () {
-    line.style.width = 0;
-  });
+menu.addEventListener("mouseleave", function () {
+  line.style.width = 0;
+});
 // value gender
 const mala = document.getElementsByName("type");
 function getInfo(mala) {
@@ -37,23 +40,23 @@ function getInfo(mala) {
 //get info
 
 let register = [
-  email= "",
-  password= "",
-  name= "",
-  gender= "",
-  phone= ""
+  email = "",
+  password = "",
+  name = "",
+  gender = "",
+  phone = ""
 ];
 
 var check = new Validation();
 const from = document.querySelector('#from');
-document.querySelector(".btn-register").onclick = function(e){
+document.querySelector(".btn-register").onclick = function (e) {
   e.preventDefault();
-  register.email =document.getElementById("email").value
-  register.password =document.getElementById("password").value
-  register.name =document.getElementById("name").value
+  register.email = document.getElementById("email").value;
+  register.password = document.getElementById("password").value;
+  register.name = document.getElementById("name").value;
   register.gender = getInfo(mala);
-  register.phone =document.getElementById("phone").value
-  
+  register.phone = document.getElementById("phone").value;
+
   const passwordConfirm = document.getElementById("password1").value;
 
   var valid = true;
@@ -61,19 +64,18 @@ document.querySelector(".btn-register").onclick = function(e){
   valid = check.checkPassword(register.password, '.error-password', '.icon-password');
   valid = check.checkName(register.name, '.error-name', '.icon-name');
   valid = check.checkPhone(register.phone, '.error-phone', '.icon-phone');
-  valid = check.checkGender(register.gender, '.error')
-  if(passwordConfirm != register.password ){
+  valid = check.checkGender(register.gender, '.error');
+  if (passwordConfirm != register.password) {
     document.querySelector(".error-password1").innerHTML = `Mật khẩu không khớp !`;
     return;
   } else {
-    document.querySelector(".error-password1").innerHTML =" ";
+    document.querySelector(".error-password1").innerHTML = " ";
     document.querySelector('.icon-password1').innerHTML = `<i class="fa-solid fa-check"></i>`;
   }
-  if (!valid)
-  { return;
+  if (!valid) {
+    return;
   }
   getRegister(register);
 
 };
-
 
