@@ -1,5 +1,4 @@
 .feature {
-  // height: 900px;
   padding: 2rem 0;
 
   .container {
@@ -13,28 +12,15 @@
 
   .feature__title {
     @include text($fz-xxl, $fw-regular, $lh: $lh-xxl);
-    text-align: center;
     margin-bottom: 9rem;
   }
 
   .feature__item {
     position: relative;
-    background: $bg-light-c2;
-
-    // skeleton
-    width: 307px;
-    height: 369px;
+    background: #f8f8f8;
     transition: all linear 0.2s;
 
-    &.skeleton {
-      cursor: wait;
-
-      a {
-        pointer-events: none;
-      }
-    }
-
-    &:not(.skeleton):hover {
+    &:hover {
       transform: translateY(-1rem);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -65,7 +51,6 @@
   height: 7.6rem;
   padding: 1.2rem 2.4rem;
   transition: all linear 0.2s;
-  overflow: hidden;
 
   h3 {
     @include text($fz: $fz-xl, $lh: $lh-lg);
@@ -88,13 +73,13 @@
     h3,
     p {
       color: $text-light-c0;
-      @extend %show-text;
+      @extend %not-hide-text;
     }
 
     h3 {
       font-weight: $fw-semibold;
       transform: translateY(-1rem);
-      margin-bottom: 1.4rem;
+      margin-bottom: 2.4rem;
     }
 
     p {
@@ -104,9 +89,7 @@
 }
 
 .feature__item-footer {
-  @include d-flex($fw: no-wrap);
-  position: absolute;
-  inset: auto 0 0;
+  @include d-flex();
   background-color: $bg-light-c1;
 
   .feature__button {

@@ -20,12 +20,9 @@
     } @else if($jc == null and $ai) {
       justify-content: $direction-row-justify-content;
       align-items: $ai;
-    } @else if($jc == null and $ai == null) {
+    } @else {
       justify-content: $direction-row-justify-content;
       align-items: $direction-row-align-item;
-    } @else {
-      justify-content: $jc;
-      align-items: $ai;
     }
   } @else if ($fd == column) {
     @if ($jc and $ai == null) {
@@ -34,12 +31,9 @@
     } @else if($jc == null and $ai) {
       justify-content: $direction-col-justify-content;
       align-items: $ai;
-    } @else if($jc == null and $ai == null) {
+    } @else {
       justify-content: $direction-col-justify-content;
       align-items: $direction-col-align-item;
-    } @else {
-      justify-content: $jc;
-      align-items: $ai;
     }
   }
 }
@@ -168,34 +162,16 @@
   text-align: center;
 }
 
-// hide text
+// hidde text
 %hide-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-// show text
-%show-text {
+// hidde text
+%not-hide-text {
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes drop {
-  from {
-    transform: translateY(-10px);
-  }
-  to {
-    transform: translateY(0);
-  }
 }

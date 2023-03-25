@@ -1,0 +1,3 @@
+function UserRegister() {
+    this.email = "";
+}

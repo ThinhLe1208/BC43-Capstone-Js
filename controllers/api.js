@@ -1,4 +1,4 @@
-export const getProducts = async () => {
+const getProducts = async () => {
     const promise = await axios({
         url: 'https://shop.cyberlearn.vn/api/Product',
         method: 'GET'
@@ -8,7 +8,7 @@ export const getProducts = async () => {
     return promise.data.content;
 };
 
-export const getById = async (id) => {
+const getById = async (id) => {
     const promise = await axios({
         url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${id}`,
         method: 'GET'
