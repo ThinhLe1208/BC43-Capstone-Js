@@ -44,3 +44,30 @@ img.item {
 .animation {
   transition: margin linear 0.5s;
 }
+
+.dots {
+  --height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: calc(var(--height) * 4);
+  height: var(--height);
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  z-index: 999;
+}
+
+.dot {
+  width: var(--height);
+  height: var(--height);
+  background-color: #d6d6d6;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #869791;
+}

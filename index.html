@@ -14,7 +14,7 @@
         rel="stylesheet">
 
     <!-- Carousel -->
-    <link rel="stylesheet" href="./assets/lib/self-build-carousel.css">
+    <link rel="stylesheet" href="./assets/css/carousel.css">
 
     <!-- Main Css -->
     <link rel="stylesheet" href="/assets/css/index.min.css">
@@ -26,11 +26,11 @@
         <div class="header__top">
             <div class="container">
                 <a href="#" class="header__logo">
-                    <img src="./assets/img/logo.png" alt="logo">
+                    <img src="" alt="logo">
                 </a>
                 <div class="header__actions">
                     <a href="#">
-                        <img src="./assets/img/cart.png" alt="cart">
+                        <img src="" alt="cart">
                     </a>
                     <a href="#">Login</a>
                     <a href="#">Register</a>
@@ -54,8 +54,22 @@
 
     <section class="carousel">
         <div class="container">
+            <div class="skeleton-spinner">
+                <img src="/assets/img/loading_shoes_1.gif" alt="loading_shoes_1">
+                <img src="/assets/img/loading_shoes_2.gif" alt="loading_shoes_2">
+                <img src="/assets/img/loading_shoes_3.gif" alt="loading_shoes_3">
+            </div>
             <div class="self-build-carousel">
+                <button class="left-btn"></button>
+                <button class="right-btn"></button>
+                <div class="dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
                 <!-- render -->
+
             </div>
         </div>
     </section>
@@ -64,7 +78,58 @@
         <div class="container">
             <div class="feature__title">-Product Feature-</div>
             <ul class="feature__content row">
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+
+
                 <!-- render -->
+
             </ul>
         </div>
     </section>
@@ -72,17 +137,8 @@
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
-    <!-- API -->
-    <script src="./controllers/api.js"></script>
-
-    <!-- Utilities -->
-    <script src="./util/utilities.js"></script>
-
-    <!-- Carousel -->
-    <script src="./controllers/lib/self-build-carousel.js"></script>
-
     <!-- Main JS -->
-    <script src="./controllers/index.js"></script>
+    <script type="module" src="./controllers/index.js"></script>
 
 </body>
 

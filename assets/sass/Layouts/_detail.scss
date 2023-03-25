@@ -110,7 +110,7 @@
   .detail__add-btn {
     @include button($fz: $fz-xl, $fw: $fw-medium, $p: 1.8rem 2.8rem, $bg: $bg-gra-c1, $eff: false);
     background-size: 100%;
-    transition: all linear 0.3s;
+    transition: all linear 1s;
 
     &:hover {
       background-size: 300%;
