@@ -79,6 +79,7 @@ window.onload = async () => {
 
     Carousel({
         selector: ".self-build-carousel",
+        pag: true,
         responsive: {
             0: 1
         }
