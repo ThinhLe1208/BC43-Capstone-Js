@@ -85,31 +85,31 @@ a {
     .register-form {
       width: 100%;
       display: flex;
-      &-left {
-        width: calc(100% / 2 - 3rem);
+      &-left{
+        width: calc(100%/2 - 3rem);
         margin: 1rem 1.5rem;
       }
-      &-right {
-        width: calc(100% / 2 - 3rem);
+      &-right{
+        width: calc(100%/2 - 3rem);
         margin: 1rem 1.5rem;
-        .input-checkbox {
-          padding: 5rem 0;
+        .input-checkbox{
+          padding: 5rem 0 ;
           font-size: 2.5rem;
-          input[type="radio"] {
+          input[type="radio"]{
             width: 3rem;
             height: 2rem;
           }
-          .error {
+          .error{
             font-size: 1.6rem;
             color: red;
             margin: 1rem 0 0 1rem;
           }
         }
-        .btn-register {
+        .btn-register{
           padding: 2rem 5rem;
           border-radius: 1rem;
           font-size: 2rem;
-          background-color: $bg-primary-c0;
+          background-color:$bg-primary-c0;
           border: none;
         }
       }
@@ -137,14 +137,14 @@ a {
   color: $text-dark-c0;
   font-size: 2.5rem;
 }
-.input-focus-effect div {
+.input-focus-effect div{
   margin: 1rem 0 0 1.5rem;
   color: red;
 }
-.input-focus-effect span {
+.input-focus-effect span{
   position: absolute;
   right: 5%;
-  top: 40%;
+  top:40%;
   font-size: 2rem;
   color: seagreen;
   z-index: 1;
@@ -172,96 +172,98 @@ a {
   font-size: 3rem;
 }
 
-footer {
-  .footer-content {
-    background-color: #fafafa;
-    .footer-list {
+footer{
+  .footer-content{
+    background-color: #FAFAFA;
+    .footer-list{
       padding: 3rem 0;
       width: 100%;
       display: flex;
-      .footer-item {
-        width: calc(100% / 3 - 2rem);
+      .footer-item{
+        width: calc(100%/3 - 2rem);
         padding: 0 2rem;
         margin-right: 2rem;
         border-right: 1px solid #999;
         line-height: 2.2rem;
-        h3 {
+        h3{
           font-size: 2rem;
           font-weight: 500;
           margin-bottom: 1.5rem;
         }
-        a {
+        a{
           display: block;
-          padding-top: 1rem;
+          padding-top:  1rem ;
           margin: 0;
-          color: #e19291;
+          color: #E19291;
           bottom: 0;
         }
       }
-      .footer-item:last-child {
+      .footer-item:last-child{
         border-right: none;
       }
     }
   }
-  .footer-content:last-child {
-    background-color: #ececec;
+  .footer-content:last-child{
+    background-color: #ECECEC;
   }
 }
 
-@media screen and (max-width: 767.8px) {
-  html {
-    font-size: 50%;
-    body {
-      .header {
-        .header-top {
-          height: 8rem;
-          display: flex;
-          align-items: center;
-          padding: 3rem 2rem;
-        }
-        .menu {
-          margin: 2rem;
-        }
+@media screen and (max-width: 767.8px){
+html{
+  font-size: 50%;
+  body{
+    .header{
+      .header-top{
+        height: 8rem;
+       display: flex;
+       align-items: center;
+       padding: 3rem 2rem;
       }
-      .register {
+      .menu{
+        margin: 2rem;
+      }
+    }
+    .register{
+      padding: 0 4rem;
+    }
+    footer{
+      .footer-content{
         padding: 0 4rem;
       }
-      footer {
-        .footer-content {
-          padding: 0 4rem;
-        }
-      }
     }
   }
+ }
 }
-@media screen and (max-width: 575.8px) {
-  html {
+@media screen and (max-width: 575.8px){
+  html{
     font-size: 40%;
-    body {
-      .register {
+    body{
+      .register{
         margin-bottom: 2rem;
-        .register-form {
+        .register-form{
+         
           flex-direction: column;
-          .register-form-left {
+          .register-form-left{
             padding-right: 2rem;
             width: 100%;
-            margin: 0;
+           margin: 0;
           }
-          .register-form-right {
+          .register-form-right{
             width: 100%;
             padding-right: 2rem;
             margin: 0;
-            .btn-register {
-              display: block;
-              margin: 0 auto;
-            }
+           .btn-register{
+            display: block;
+            margin: 0 auto;
+           }
           }
         }
       }
-      footer {
-        .footer-content {
+      footer{
+        .footer-content{
+          
         }
       }
     }
-  }
+   }
 }

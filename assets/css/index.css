@@ -250,7 +250,7 @@ a {
 }
 
 .register {
-  margin-top: 3rem;
+  margin: 3rem 0;
 }
 .register .container .register-title {
   text-align: center;
@@ -356,7 +356,7 @@ a {
 }
 
 footer .footer-content {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 footer .footer-content .footer-list {
   padding: 3rem 0;
@@ -379,12 +379,58 @@ footer .footer-content .footer-list .footer-item a {
   display: block;
   padding-top: 1rem;
   margin: 0;
-  color: #E19291;
+  color: #e19291;
   bottom: 0;
 }
 footer .footer-content .footer-list .footer-item:last-child {
   border-right: none;
 }
 footer .footer-content:last-child {
-  background-color: #ECECEC;
+  background-color: #ececec;
+}
+
+@media screen and (max-width: 767.8px) {
+  html {
+    font-size: 50%;
+  }
+  html body .header .header-top {
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    padding: 3rem 2rem;
+  }
+  html body .header .menu {
+    margin: 2rem;
+  }
+  html body .register {
+    padding: 0 4rem;
+  }
+  html body footer .footer-content {
+    padding: 0 4rem;
+  }
+}
+@media screen and (max-width: 575.8px) {
+  html {
+    font-size: 40%;
+  }
+  html body .register {
+    margin-bottom: 2rem;
+  }
+  html body .register .register-form {
+    flex-direction: column;
+  }
+  html body .register .register-form .register-form-left {
+    padding-right: 2rem;
+    width: 100%;
+    margin: 0;
+  }
+  html body .register .register-form .register-form-right {
+    width: 100%;
+    padding-right: 2rem;
+    margin: 0;
+  }
+  html body .register .register-form .register-form-right .btn-register {
+    display: block;
+    margin: 0 auto;
+  }
 }
