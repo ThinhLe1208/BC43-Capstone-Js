@@ -5,7 +5,7 @@ import { getRegister } from '../services/api.js';
 const links = [...document.querySelectorAll(".menu-link")];
 links.forEach((item) => item.addEventListener("mouseenter", handleHoveerLine));
 const line = document.createElement("div");
-line.className = 'line-effect';
+line.className = "line-effect";
 document.body.appendChild(line);
 function handleHoveerLine(e) {
   const { left, width, top, height } = e.target.getBoundingClientRect();
@@ -17,6 +17,8 @@ const menu = document.querySelector(".menu");
 menu.addEventListener("mouseleave", function () {
   line.style.width = 0;
 });
+
+
 // value gender
 const mala = document.getElementsByName("type");
 function getInfo(mala) {
@@ -39,16 +41,16 @@ function getInfo(mala) {
 
 //get info
 
-let register = [
-  email = "",
-  password = "",
-  name = "",
-  gender = "",
-  phone = ""
-];
+let register = {
+  email: "",
+  password: "",
+  name: "",
+  gender: "",
+  phone: "",
+};
 
 var check = new Validation();
-const from = document.querySelector('#from');
+const from = document.getElementById("form"), span = document.querySelectorAll('.input-focus-effect span');
 document.querySelector(".btn-register").onclick = function (e) {
   e.preventDefault();
   register.email = document.getElementById("email").value;
@@ -59,23 +61,39 @@ document.querySelector(".btn-register").onclick = function (e) {
 
   const passwordConfirm = document.getElementById("password1").value;
 
-  var valid = true;
-  valid = check.checkEmail(register.email, '.error-email', '.icon-email');
-  valid = check.checkPassword(register.password, '.error-password', '.icon-password');
-  valid = check.checkName(register.name, '.error-name', '.icon-name');
-  valid = check.checkPhone(register.phone, '.error-phone', '.icon-phone');
-  valid = check.checkGender(register.gender, '.error');
+  var valid = false;
+  valid =
+    check.checkEmail(register.email, ".error-email", ".icon-email") &
+    check.checkPassword(
+      register.password,
+      ".error-password",
+      ".icon-password"
+    ) &
+    check.checkName(register.name, ".error-name", ".icon-name") &
+    check.checkPhone(register.phone, ".error-phone", ".icon-phone") &
+    check.checkGender(register.gender, ".error");
   if (passwordConfirm != register.password) {
-    document.querySelector(".error-password1").innerHTML = `Mật khẩu không khớp !`;
+    document.querySelector(
+      ".error-password1"
+    ).innerHTML = `Mật khẩu không khớp !`;
+    document.querySelector(
+      ".icon-password1"
+    ).innerHTML = '';
     return;
   } else {
     document.querySelector(".error-password1").innerHTML = " ";
-    document.querySelector('.icon-password1').innerHTML = `<i class="fa-solid fa-check"></i>`;
+    document.querySelector(
+      ".icon-password1"
+    ).innerHTML = `<i class="fa-solid fa-check"></i>`;
   }
   if (!valid) {
     return;
   }
-  getRegister(register);
+  if (getRegister(register)) {
+    form.reset();
+    [...span].forEach(item => item.innerHTML = '');
+  }
+  // getRegister(register);
+
 
 };
-

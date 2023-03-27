@@ -1,0 +1,53 @@
+@media screen and (max-width: 767.8px) {
+  html {
+    font-size: 50%;
+    body {
+      .header {
+        .header-top {
+          height: 8rem;
+          display: flex;
+          align-items: center;
+          padding: 3rem 2rem;
+        }
+        .menu {
+          margin: 2rem;
+        }
+      }
+      .register {
+        padding: 0 4rem;
+      }
+      footer {
+        .footer-content {
+          padding: 0 4rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 575.8px) {
+  html {
+    font-size: 40%;
+    body {
+      .register {
+        margin-bottom: 2rem;
+        .register-form {
+          flex-direction: column;
+          .register-form-left {
+            padding-right: 2rem;
+            width: 100%;
+            margin: 0;
+          }
+          .register-form-right {
+            width: 100%;
+            padding-right: 2rem;
+            margin: 0;
+            .btn-register {
+              display: block;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
