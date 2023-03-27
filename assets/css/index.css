@@ -306,7 +306,6 @@ button {
   padding: 0 1.5rem;
 }
 .header-top .container .header-list .header-item a {
-  margin: 0 1.5rem;
   color: #f5f5f5;
 }
 .header .container .menu a {
@@ -935,7 +934,6 @@ footer .footer-content .footer-list .footer-item:last-child {
 }
 footer .footer-content:last-child {
   background-color: #ececec;
-<<<<<<< HEAD
 }
 
 @media screen and (max-width: 767.8px) {
@@ -982,6 +980,4 @@ footer .footer-content:last-child {
     display: block;
     margin: 0 auto;
   }
-=======
->>>>>>> 11f7979164cc4f3641852f4bbe2b6484fde131b1
 }
