@@ -225,6 +225,30 @@
   text-overflow: clip;
 }
 
+// skeleton
+.skeleton-spinner {
+  @include d-flex($jc: center, $ai: center);
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  cursor: wait;
+  z-index: 888;
+
+  img {
+    width: 6%;
+  }
+
+  img + img {
+    margin-left: 2rem;
+  }
+
+  img:first-child {
+    transform: translateY(-6px);
+  }
+}
+
 // animations
 @keyframes fadeIn {
   from {

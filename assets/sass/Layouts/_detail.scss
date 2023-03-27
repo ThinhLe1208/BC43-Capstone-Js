@@ -1,13 +1,22 @@
 .detail {
+  padding: $padding-y-carousel-c3 0 0;
+
   .container {
     @include d-flex($ai: flex-start);
+    position: relative;
     align-items: flex-start;
+    min-height: calc(53rem - $padding-y-carousel-c3);
   }
 
   .detail__img {
     position: relative;
     width: $detail-img-width;
     text-align: center;
+
+    @include sm {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
 
     & > img {
       width: 34rem;
@@ -40,6 +49,19 @@
   .detail__content {
     width: calc(100% - $detail-img-width);
     padding: 0 10rem;
+
+    @include lg {
+      padding: 0 8rem;
+    }
+
+    @include md {
+      padding: 0 4rem;
+    }
+
+    @include sm {
+      width: 100%;
+      padding: 0 2rem;
+    }
   }
 }
 

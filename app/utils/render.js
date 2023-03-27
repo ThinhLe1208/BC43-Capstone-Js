@@ -89,21 +89,23 @@ export const renderRelated = (data) => {
     console.log(data);
     const htmlString = data.relatedProducts.map((product) => {
         return `
-        <li class="col-4">
-                    <div class="feature__item">
-                        <div class="feature__item-header">
-                            <img src="${product.image}" alt="product-img">
-                        </div>
-                        <div class="feature__item-body">
-                            <h3>${product.name}</h3>
-                            <p>${product.shortDescription}</p>
-                        </div>
-                        <div class="feature__item-footer">
-                            <a href="./detail.html?id=${product.id}" class="feature__button">Buy now</a>
-                            <div class="feature__price">${product.price}$</div>
-                        </div>
+        <li class="col">
+            <div class="feature__item">
+                <div class="feature__item-top">
+                    <div class="feature__item-header">
+                        <img src="${product.image}" alt="product-img">
                     </div>
-                </li>
+                    <div class="feature__item-body">
+                        <h3>${product.name}</h3>
+                        <p>${product.shortDescription}</p>
+                    </div>
+                </div >
+                <div class="feature__item-footer">
+                    <a href="./detail.html?id=${product.id}" class="feature__button">Buy now</a>
+                    <div class="feature__price">${product.price}$</div>
+                </div>
+            </div>
+        </li>
         `;
     });
 

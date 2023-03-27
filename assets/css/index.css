@@ -65,6 +65,30 @@
   text-overflow: clip;
 }
 
+.skeleton-spinner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  cursor: wait;
+  z-index: 888;
+}
+.skeleton-spinner img {
+  width: 6%;
+}
+.skeleton-spinner img + img {
+  margin-left: 2rem;
+}
+.skeleton-spinner img:first-child {
+  transform: translateY(-6px);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -243,7 +267,7 @@ html {
 }
 @media (max-width: 576px) {
   html {
-    font-size: 50%;
+    font-size: 38%;
   }
 }
 @media (max-width: 366px) {
@@ -384,13 +408,16 @@ button {
 .header-top .container .header-list .header-item a {
   color: #f5f5f5;
 }
+.header-top .container .header-list .header-item a + a {
+  margin: 0 1.5rem;
+}
 .header .container .menu a {
   padding: 1rem 0;
   margin: 0 1.2rem;
   color: #777;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 2rem;
+  line-height: 2.4rem;
   position: relative;
   transition: all 0.25s linear;
 }
@@ -400,7 +427,7 @@ button {
 
 .carousel {
   background: url("/assets/img/slider_bg.png") bottom/contain no-repeat;
-  padding: 0 0 2.6rem;
+  padding-bottom: 6.6rem;
   overflow: hidden;
 }
 .carousel .container {
@@ -410,39 +437,23 @@ button {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  height: 53rem;
+  height: 46.4rem;
 }
 @media (max-width: 768px) {
+  .carousel {
+    padding-bottom: 4.6rem;
+  }
   .carousel .container {
-    height: 43rem;
+    height: 43.4rem;
   }
 }
 @media (max-width: 576px) {
-  .carousel .container {
-    height: 33rem;
+  .carousel {
+    padding-bottom: 2.6rem;
   }
-}
-.carousel .skeleton-spinner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  cursor: wait;
-  z-index: 888;
-}
-.carousel .skeleton-spinner img {
-  width: 6%;
-}
-.carousel .skeleton-spinner img + img {
-  margin-left: 2rem;
-}
-.carousel .skeleton-spinner img:first-child {
-  transform: translateY(-6px);
+  .carousel .container {
+    height: 30.4rem;
+  }
 }
 .carousel .items-container {
   animation: fadeIn linear 1s;
@@ -488,10 +499,19 @@ button {
 
 .carousel__img {
   width: 70%;
+  height: 100%;
+}
+.carousel__img img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 576px) {
   .carousel__img {
     flex-grow: 1;
+  }
+  .carousel__img img {
+    width: 100%;
   }
 }
 
@@ -600,9 +620,19 @@ button {
 .carousel + .feature {
   padding: 4.6rem 0 10.6rem;
 }
+@media (max-width: 576px) {
+  .carousel + .feature {
+    padding: 4.6rem 0 6.6rem;
+  }
+}
 
 .detail + .feature {
-  padding: 1.6rem 0 10.6rem;
+  padding: 2.6rem 0 10.6rem;
+}
+@media (max-width: 576px) {
+  .detail + .feature {
+    padding: 4.6rem 0 6.6rem;
+  }
 }
 
 .feature .container {
@@ -829,18 +859,29 @@ button {
   padding-right: 1.4rem;
 }
 
+.detail {
+  padding: 5.8rem 0 0;
+}
 .detail .container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
   align-items: flex-start;
+  min-height: 47.2rem;
 }
 .detail .detail__img {
   position: relative;
   width: 42rem;
   text-align: center;
+}
+@media (max-width: 576px) {
+  .detail .detail__img {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
 }
 .detail .detail__img > img {
   width: 34rem;
@@ -872,6 +913,22 @@ button {
 .detail .detail__content {
   width: calc(100% - 42rem);
   padding: 0 10rem;
+}
+@media (max-width: 992px) {
+  .detail .detail__content {
+    padding: 0 8rem;
+  }
+}
+@media (max-width: 768px) {
+  .detail .detail__content {
+    padding: 0 4rem;
+  }
+}
+@media (max-width: 576px) {
+  .detail .detail__content {
+    width: 100%;
+    padding: 0 2rem;
+  }
 }
 
 .detail__content .detail__name {
@@ -1147,46 +1204,40 @@ footer .footer-content:last-child {
 }
 
 @media screen and (max-width: 767.8px) {
-  html {
-    font-size: 50%;
-  }
-  html body .header .header-top {
+  body .header .header-top {
     height: 8rem;
     display: flex;
     align-items: center;
     padding: 3rem 2rem;
   }
-  html body .header .menu {
+  body .header .menu {
     margin: 2rem;
   }
-  html body .register {
+  body .register {
     padding: 0 4rem;
   }
-  html body footer .footer-content {
+  body footer .footer-content {
     padding: 0 4rem;
   }
 }
 @media screen and (max-width: 575.8px) {
-  html {
-    font-size: 40%;
-  }
-  html body .register {
+  body .register {
     margin-bottom: 2rem;
   }
-  html body .register .register-form {
+  body .register .register-form {
     flex-direction: column;
   }
-  html body .register .register-form .register-form-left {
+  body .register .register-form .register-form-left {
     padding-right: 2rem;
     width: 100%;
     margin: 0;
   }
-  html body .register .register-form .register-form-right {
+  body .register .register-form .register-form-right {
     width: 100%;
     padding-right: 2rem;
     margin: 0;
   }
-  html body .register .register-form .register-form-right .btn-register {
+  body .register .register-form .register-form-right .btn-register {
     display: block;
     margin: 0 auto;
   }
