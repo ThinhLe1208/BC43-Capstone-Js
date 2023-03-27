@@ -86,7 +86,6 @@ export const renderDetail = (data) => {
 
 export const renderRelated = (data) => {
     const related = document.querySelector('.feature__content');
-    console.log(data);
     const htmlString = data.relatedProducts.map((product) => {
         return `
         <li class="col">
@@ -110,6 +109,92 @@ export const renderRelated = (data) => {
     });
 
     related.innerHTML = htmlString.join('');
+};
+
+export const renderProfile = (data) => {
+    const profile = document.querySelector('.profile__content');
+
+    profile.innerHTML = `
+        <div class="col-md-6 profile__left">
+            <img src="${data.avatar}" alt="avatar"
+            class="d-block w-50 border border-primary border-3 rounded-circle mx-auto mb-4">
+            <div class="text-center">
+                <button class="profile__pass-btn btn btn-warning">Password</button>
+                <button class="profile__update-btn btn btn-success">Update</button>
+                <button class="profile__logout-btn btn btn-danger">Logout</button>
+            </div>
+            </div>
+            <div class="col-md-6 profile__right">
+                <div class="mb-4">
+                    <p class="form-label">Name</p>
+                    <div class="form-text">${data.name}</div>
+                </div>
+                <div class="mb-4">
+                    <p class="form-label">Email</p>
+                    <div class="form-text">${data.email}</div>
+                </div>
+                <div class="mb-4">
+                    <p class="form-label">Gender</p>
+                    <div class="form-text">${data.gender ? 'Nam' : 'Nữ'}</div>
+                </div>
+                <div class="mb-4">
+                    <p class="form-label">Phone</p>
+                    <div class="form-text">${data.phone}</div>
+                </div>
+            </div>
+        `;
+};
+
+export const renderOrders = (data) => {
+    const order = document.querySelector('#accordionOrders');
+    const { ordersHistory } = data;
+
+    const stringHTML = ordersHistory.map((order, index) => {
+        const { orderDetail } = order;
+
+        const detailString = orderDetail.reduce((acc, detail) => {
+            return acc += `
+                <tr>
+                    <td class="w-25">
+                        <img src="${detail.image}" class="img-fluid" alt="">
+                    </td>
+                    <td>${detail.name}</td>
+                    <td>${detail.price}$</td>
+                    <td>${detail.shortDescription}</td>
+                </tr>
+            `;
+        }, '');
+
+        return `
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed bg-primary text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapse${index}" aria-expanded="true" aria-controls="collapseOne">
+                    ${order.date}
+                </button>
+            </h2>
+            <div id="collapse${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionOrders">
+                <div class="accordion-body">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${detailString}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        `;
+    });
+
+    order.innerHTML = stringHTML.join('');
 };
 
 export const hideLoadingCarousel = () => {

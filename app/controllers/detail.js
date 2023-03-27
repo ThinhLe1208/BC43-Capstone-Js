@@ -4,8 +4,12 @@ import { delay } from '../utils/basic.js';
 import zoomFeature from '../utils/zoomFeature.js';
 import interactInput from '../utils/interactInput.js';
 import hoverLineMenu from '../utils/hoverLineMenu.js';
+import checkLogIn from '../utils/checkLogIn.js';
 
 window.onload = async () => {
+    // check log in
+    checkLogIn();
+
     //hover line menu
     hoverLineMenu();
 

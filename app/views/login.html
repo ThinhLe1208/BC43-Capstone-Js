@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <!-- bootstrap -->
-
+    <title>Login</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,8 +32,9 @@
 
                     <div class="header-item">
                         <img src="../../assets/img/image 8.png" alt="">
-                        <a href="./login.html">Login</a>
-                        <a href="#">Register</a>
+                        <a href="#">Login</a>
+                        <a href="./register.html">Register</a>
+                        <a href="./profile.html">Profile</a>
                     </div>
                 </div>
             </div>
@@ -50,54 +49,29 @@
             </nav>
         </div>
     </header>
-    <section class="register">
+    <section class="register" style="padding: 16rem 0">
         <div class="container">
             <div class="register-title">
-                <h2>Register</h2>
+                <h2>Login</h2>
             </div>
-            <form id="form" action="" class="register-form">
+            <form id="form-login" action="" class="register-form">
                 <div class="register-form-left">
-                    <div class="input-focus-effect ">
+                    <div class="input-focus-effect login">
                         <div class="error-email"></div>
                         <span class="icon-email"></span>
-                        <input type="text" placeholder=" " id="email" />
+                        <input type="text" placeholder=" " id="email-login" />
                         <label>Email</label>
                     </div>
-                    <div class="input-focus-effect ">
+                    <div class="input-focus-effect login ">
                         <div class="error-password"></div>
                         <span class="icon-password"></span>
-                        <input type="password" placeholder=" " id="password" />
+                        <input type="text" placeholder=" " id="password-login" />
                         <label>Password</label>
-                    </div>
-                    <div class="input-focus-effect ">
-                        <div class="error-password1"></div>
-                        <span class="icon-password1"></span>
-                        <input type="password" placeholder=" " id="password1" />
-                        <label>Password Confirm</label>
                     </div>
                 </div>
                 <div class="register-form-right">
-                    <div class="input-focus-effect ">
-                        <div class="error-name"></div>
-                        <span class="icon-name"></span>
-                        <input type="text" placeholder=" " id="name" />
-                        <label>Name</label>
-                    </div>
-                    <div class="input-focus-effect ">
-                        <div class="error-phone"></div>
-                        <span class="icon-phone"></span>
-                        <input type="number" placeholder=" " id="phone" />
-                        <label>Phone</label>
-                    </div>
-                    <div class="input-checkbox">
-                        <span>Gender</span>
-                        <input type="radio" value="true" name="type" id="radio" />
-                        <span>Male</span>
-                        <input type="radio" value="false" name="type" id="radio" />
-                        <span>Female</span>
-                        <div class="error"></div>
-                    </div>
-                    <button type="submit" class="btn-register">Submit</button>
+                    <button type="submit" class="btn-register login"
+                        style="display: block;margin: 4rem auto;">Login</button>
                 </div>
             </form>
         </div>
@@ -159,7 +133,7 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
     <!-- Main JS -->
-    <script type="module" src="../controllers/register.js"></script>
+    <script type="module" src="../controllers/login.js"></script>
 </body>
 
 </html>

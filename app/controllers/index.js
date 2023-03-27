@@ -3,8 +3,12 @@ import { renderCarousel, renderFeature, hideLoadingCarousel } from '../utils/ren
 import { delay } from '../utils/basic.js';
 import Carousel from '../utils/carousel.js';
 import hoverLineMenu from '../utils/hoverLineMenu.js';
+import checkLogIn from '../utils/checkLogIn.js';
 
 window.onload = async () => {
+    // check log in
+    checkLogIn();
+
     //hover line menu
     hoverLineMenu();
 
@@ -13,16 +17,18 @@ window.onload = async () => {
     // Giả lập mạng yếu
     await delay(2000);
 
-    hideLoadingCarousel();
+    if (data) {
+        hideLoadingCarousel();
 
-    renderCarousel(data);
-    renderFeature(data);
+        renderCarousel(data);
+        renderFeature(data);
 
-    Carousel({
-        selector: ".self-build-carousel",
-        pag: true,
-        responsive: {
-            0: 1
-        }
-    });
+        Carousel({
+            selector: ".self-build-carousel",
+            pag: true,
+            responsive: {
+                0: 1
+            }
+        });
+    }
 };
