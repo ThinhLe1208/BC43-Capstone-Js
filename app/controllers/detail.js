@@ -1,17 +1,21 @@
 import { getById } from '../services/api.js';
-import { renderDetail, renderRelated } from '../views/render.js';
+import { renderDetail, renderRelated } from '../utils/render.js';
 import { delay } from '../utils/basic.js';
 import zoomFeature from '../utils/zoomFeature.js';
 import interactInput from '../utils/interactInput.js';
+import hoverLineMenu from '../utils/hoverLineMenu.js';
 
 window.onload = async () => {
+    //hover line menu
+    hoverLineMenu();
+
     // var param = new URL(window.location.href or path)
     const URLparam = new URLSearchParams(window.location.search);
     const myParam = URLparam.get('id');
     const data = await getById(myParam);
 
     // Giả lập mạng yếu
-    // await delay(1000);
+    await delay(2000);
 
     // Render giao diện
     renderDetail(data);

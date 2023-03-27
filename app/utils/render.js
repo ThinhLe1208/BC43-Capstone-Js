@@ -1,4 +1,4 @@
-import { randomEls } from '../utils/basic.js';
+import { randomEls } from './basic.js';
 
 export const renderCarousel = (data) => {
     const carousel = document.querySelector('.self-build-carousel');
@@ -13,7 +13,7 @@ export const renderCarousel = (data) => {
             <div class="carousel__info">
                 <h3 class="carousel__name">${product.name}</h3>
                 <p class="carousel__description">${product.shortDescription}</p>
-                <button><a href="/detail.html?id=${product.id}">Buy now</a></button>
+                <button><a href="./detail.html?id=${product.id}">Buy now</a></button>
             </div>
         </div>
         `;
@@ -40,7 +40,7 @@ export const renderFeature = (data) => {
                     </div>
                 </div >
                 <div class="feature__item-footer">
-                    <a href="/detail.html?id=${product.id}" class="feature__button">Buy now</a>
+                    <a href="./detail.html?id=${product.id}" class="feature__button">Buy now</a>
                     <div class="feature__price">${product.price}$</div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ export const renderRelated = (data) => {
                             <p>${product.shortDescription}</p>
                         </div>
                         <div class="feature__item-footer">
-                            <a href="/detail.html?id=${product.id}" class="feature__button">Buy now</a>
+                            <a href="./detail.html?id=${product.id}" class="feature__button">Buy now</a>
                             <div class="feature__price">${product.price}$</div>
                         </div>
                     </div>

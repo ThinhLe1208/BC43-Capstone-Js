@@ -1,23 +1,9 @@
 import Validation from '../models/Validation.js';
+import hoverLineMenu from '../utils/hoverLineMenu.js';
 import { getRegister } from '../services/api.js';
 
 //hover line menu
-const links = [...document.querySelectorAll(".menu-link")];
-links.forEach((item) => item.addEventListener("mouseenter", handleHoveerLine));
-const line = document.createElement("div");
-line.className = "line-effect";
-document.body.appendChild(line);
-function handleHoveerLine(e) {
-  const { left, width, top, height } = e.target.getBoundingClientRect();
-  line.style.width = `${width}px`;
-  line.style.left = `${left}px`;
-  line.style.top = `${top + height + 5}px`;
-}
-const menu = document.querySelector(".menu");
-menu.addEventListener("mouseleave", function () {
-  line.style.width = 0;
-});
-
+hoverLineMenu();
 
 // value gender
 const mala = document.getElementsByName("type");
