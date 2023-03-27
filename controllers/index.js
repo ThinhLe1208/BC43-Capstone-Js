@@ -1,13 +1,13 @@
-import { getProducts } from '/models/api.js';
-import { renderCarousel, renderFeature, hideLoadingCarousel } from '/views/render.js';
-import { delay } from '/utils/basic.js';
-import Carousel from '/utils/carousel.js';
+import { getProducts } from '../services/api.js';
+import { renderCarousel, renderFeature, hideLoadingCarousel } from '../views/render.js';
+import { delay } from '../utils/basic.js';
+import Carousel from '../utils/carousel.js';
 
 window.onload = async () => {
     const data = await getProducts();
 
     // Giả lập mạng yếu
-    // await delay(1000);
+    await delay(2000);
 
     hideLoadingCarousel();
 

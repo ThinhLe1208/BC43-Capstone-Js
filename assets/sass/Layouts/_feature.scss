@@ -1,7 +1,12 @@
-.feature {
-  // height: 900px;
-  padding: 2rem 0;
+.carousel + .feature {
+  padding: 4.6rem 0 10.6rem;
+}
 
+.detail + .feature {
+  padding: 1.6rem 0 10.6rem;
+}
+
+.feature {
   .container {
     @include d-flex(column);
   }
@@ -15,15 +20,22 @@
     @include text($fz-xxl, $fw-regular, $lh: $lh-xxl);
     text-align: center;
     margin-bottom: 9rem;
+
+    @include lg {
+      margin-bottom: 8rem;
+    }
+
+    @include md {
+      margin-bottom: 6rem;
+    }
+
+    @include sm {
+      margin-bottom: 4rem;
+    }
   }
 
   .feature__item {
-    position: relative;
     background: $bg-light-c2;
-
-    // skeleton
-    width: 307px;
-    height: 369px;
     transition: all linear 0.2s;
 
     &.skeleton {
@@ -49,68 +61,100 @@
   }
 }
 
-.feature__item-header {
-  padding: 1.6rem 4rem 0;
-  margin-bottom: 7.6rem;
-  text-align: center;
+.feature__item-top {
+  position: relative;
 
-  img {
+  .feature__item-header {
+    padding: 1.6rem 4rem 8rem;
+    text-align: center;
+
+    @include md {
+      padding: 1.6rem 4rem 4rem;
+    }
+
+    @include sm {
+      padding: 1.6rem 4rem 2rem;
+    }
+
+    img {
+      transition: all linear 0.2s;
+    }
+  }
+
+  .feature__item-body {
+    position: absolute;
+    inset: auto 0 0;
+    height: 7.6rem;
+    padding: 1.2rem 2.4rem;
     transition: all linear 0.2s;
+    overflow: hidden;
+
+    h3 {
+      @include text($fz: $fz-xl, $lh: $lh-lg);
+      @extend %hide-text;
+      margin-bottom: 0.8rem;
+      transform: translateY(-1.4rem);
+    }
+
+    p {
+      @include text($fz: $fz-lg, $c: $text-light-c2);
+      @extend %hide-text;
+      transform: translateY(-1.4rem);
+    }
   }
 }
 
-.feature__item-body {
-  position: absolute;
-  inset: auto 0 $buy-btn-height 0;
-  height: 7.6rem;
-  padding: 1.2rem 2.4rem;
-  transition: all linear 0.2s;
-  overflow: hidden;
+.feature__item:not(.skeleton) .feature__item-body:hover {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3.4rem 1.4rem;
+
+  @include lg {
+    padding: 3.4rem 2.4rem;
+  }
+
+  @include sm {
+    padding: 4.4rem 3.4rem;
+  }
+
+  h3,
+  p {
+    color: $text-light-c0;
+    @extend %show-text;
+  }
 
   h3 {
-    @include text($fz: $fz-xl, $lh: $lh-lg);
-    @extend %hide-text;
-    margin-bottom: 0.8rem;
-    transform: translateY(-1.4rem);
+    font-weight: $fw-semibold;
+    transform: translateY(-1rem);
+    margin-bottom: 1.4rem;
+
+    @include md {
+      font-size: 24px;
+      line-height: $lh-xxl;
+      margin-bottom: 3.4rem;
+    }
   }
 
   p {
-    @include text($fz: $fz-lg, $c: $text-light-c2);
-    @extend %hide-text;
-    transform: translateY(-1.4rem);
-  }
+    line-height: $lh-lg;
 
-  &:hover {
-    height: calc(100% - $buy-btn-height);
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 3.4rem 2.4rem;
-
-    h3,
-    p {
-      color: $text-light-c0;
-      @extend %show-text;
-    }
-
-    h3 {
-      font-weight: $fw-semibold;
-      transform: translateY(-1rem);
-      margin-bottom: 1.4rem;
-    }
-
-    p {
-      line-height: $lh-lg;
+    @include md {
+      font-size: 20px;
     }
   }
 }
 
 .feature__item-footer {
-  @include d-flex($fw: no-wrap);
-  position: absolute;
-  inset: auto 0 0;
+  @include d-flex($fw: nowrap);
   background-color: $bg-light-c1;
 
   .feature__button {
-    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bg: $bg-orange-c1, $p: 1.6rem 3.5rem);
+    @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bg: $bg-orange-c1, $p: 2rem 0);
+    width: 58%;
+
+    @include lg {
+      @include button($fz: $fz-xl, $c: $text-dark-c0, $fw: $fw-xlight, $bg: $bg-orange-c1, $p: 2rem 0, $eff: false);
+    }
   }
 
   .feature__price {

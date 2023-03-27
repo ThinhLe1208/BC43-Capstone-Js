@@ -1,8 +1,6 @@
 .detail {
-  padding: 16rem 0 4rem;
-
   .container {
-    @include d-flex($ai: flex-start); // error: @mixin d-flex khong nhan flex-start
+    @include d-flex($ai: flex-start);
     align-items: flex-start;
   }
 

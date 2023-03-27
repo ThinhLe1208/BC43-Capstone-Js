@@ -1,5 +1,5 @@
-import Validation from '/models/Validation.js';
-import { getRegister } from '/models/api.js';
+import Validation from '../models/Validation.js';
+import { getRegister } from '../services/api.js';
 
 //hover line menu
 const links = [...document.querySelectorAll(".menu-link")];

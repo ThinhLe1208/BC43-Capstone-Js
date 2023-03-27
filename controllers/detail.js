@@ -1,8 +1,8 @@
-import { getById } from '/models/api.js';
-import { renderDetail, renderRelated } from '/views/render.js';
-import { delay } from '/utils/basic.js';
-import zoomFeature from '/utils/zoomFeature.js';
-import interactInput from '/utils/interactInput.js';
+import { getById } from '../services/api.js';
+import { renderDetail, renderRelated } from '../views/render.js';
+import { delay } from '../utils/basic.js';
+import zoomFeature from '../utils/zoomFeature.js';
+import interactInput from '../utils/interactInput.js';
 
 window.onload = async () => {
     // var param = new URL(window.location.href or path)

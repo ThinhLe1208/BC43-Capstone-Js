@@ -82,21 +82,31 @@ $direction-col-align-item: center;
 
 // ------- gird system -------
 $gutter-x-c0: 0rem;
-$gutter-x-c1: 0.5rem;
-$gutter-x-c2: 2rem;
-$gutter-x-c3: 6rem;
+$gutter-x-c1: 2rem;
+$gutter-x-c2: 6rem;
+$gutter-x-c3: 8rem;
 $gutter-x-c4: 11rem;
 
 $gutter-y-c0: 0rem;
-$gutter-y-c1: 0.5rem;
-$gutter-y-c2: 2rem;
-$gutter-y-c3: 6rem;
+$gutter-y-c1: 2rem;
+$gutter-y-c2: 6rem;
+$gutter-y-c3: 4.6rem;
 $gutter-y-c4: 11rem;
+
+// ==========================
+// ======== RESPONSIVE ======
+// ==========================
+
+$xsm-width: 366px;
+$sm-width: 576px;
+$md-width: 768px;
+$lg-width: 992px;
+$xlg-width: 1280px;
 
 // ======================
 // ======== OTHERS ======
 // ======================
 
-$buy-btn-height: 5.6rem;
+$buy-btn-height: 6.4rem;
 $detail-img-width: 42rem;
 $dots-carousel-height: 1.5rem;

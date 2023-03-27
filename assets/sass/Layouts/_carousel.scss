@@ -1,11 +1,20 @@
 .carousel {
   background: url("/assets/img/slider_bg.png") bottom / contain no-repeat;
-  padding: 10rem 0 2.6rem;
+  padding: 0 0 2.6rem;
+  overflow: hidden;
 
   .container {
     @include d-flex();
     position: relative;
     height: 53rem;
+
+    @include md {
+      height: 43rem;
+    }
+
+    @include sm {
+      height: 33rem;
+    }
   }
 
   .skeleton-spinner {
@@ -35,6 +44,7 @@
 
     .carousel__item {
       @include d-flex();
+      align-content: center;
       padding: 0 10rem;
     }
   }
@@ -80,11 +90,18 @@
 
 .carousel__img {
   width: 70%;
+
+  @include sm {
+    flex-grow: 1;
+  }
 }
 
 .carousel__info {
-  width: 30%;
   @include d-flex($fd: column, $jc: center, $ai: flex-start);
+  @include sm {
+    display: none;
+  }
+  width: 30%;
 
   .carousel__name {
     @include text($fz: $fz-xxl, $lh: $lh-xxl);
@@ -98,6 +115,9 @@
 
   button {
     @include button();
+    @include lg {
+      @include button($eff: false);
+    }
 
     a {
       @include text($fz: $fz-lg, $c: $text-light-c0);

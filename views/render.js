@@ -1,4 +1,4 @@
-import { randomEls } from '/utils/basic.js';
+import { randomEls } from '../utils/basic.js';
 
 export const renderCarousel = (data) => {
     const carousel = document.querySelector('.self-build-carousel');
@@ -28,15 +28,17 @@ export const renderFeature = (data) => {
 
     const htmlString = products.map((product) => {
         return `
-        <li class="col-4">
+        <li class="col">
             <div class="feature__item">
-                <div class="feature__item-header">
-                    <img src="${product.image}" alt="product-img">
-                </div>
-                <div class="feature__item-body">
-                    <h3>${product.name}</h3>
-                    <p>${product.shortDescription}</p>
-                </div>
+                <div class="feature__item-top">
+                    <div class="feature__item-header">
+                        <img src="${product.image}" alt="product-img">
+                    </div>
+                    <div class="feature__item-body">
+                        <h3>${product.name}</h3>
+                        <p>${product.shortDescription}</p>
+                    </div>
+                </div >
                 <div class="feature__item-footer">
                     <a href="/detail.html?id=${product.id}" class="feature__button">Buy now</a>
                     <div class="feature__price">${product.price}$</div>
