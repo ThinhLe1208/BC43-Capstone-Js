@@ -13,26 +13,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- Main Css -->
-    <link rel="stylesheet" href="./assets/css/detail.min.css">
+    <link rel="stylesheet" href="/assets/css/index.min.css">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-list">
 
+                    <img src="./assets/img/image 3.png" alt="">
+
+                    <div class="header-item">
+                        <img src="./assets/img/image 8.png" alt="">
+                        <a href="#">Login</a>
+                        <a href="">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="menu">
+                <a href="/index.html" class="menu-link">Home</a>
+                <a href="#" class="menu-link">Men</a>
+                <a href="#" class="menu-link">Woman</a>
+                <a href="#" class="menu-link">Kid</a>
+                <a href="#" class="menu-link">Spot</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="detail">
+        <div class="container">
+            <!-- render -->
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="container">
+            <div class="feature__title">-Realate Product-</div>
+            <ul class="feature__content row">
+                <!-- render -->
+            </ul>
+        </div>
+    </section>
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
-    <!-- API -->
-    <script src="/customer/controller/api.js"></script>
-
     <!-- Main JS -->
-    <script src="/customer/controller/detail.js"></script>
+    <script type="module" src="/controllers/detail.js"></script>
 </body>
 
 </html>

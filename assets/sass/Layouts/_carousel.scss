@@ -1,0 +1,106 @@
+.carousel {
+  background: url("/assets/img/slider_bg.png") bottom / contain no-repeat;
+  padding: 10rem 0 2.6rem;
+
+  .container {
+    @include d-flex();
+    position: relative;
+    height: 53rem;
+  }
+
+  .skeleton-spinner {
+    @include d-flex($jc: center, $ai: center);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    cursor: wait;
+    z-index: 888;
+
+    img {
+      width: 6%;
+    }
+
+    img + img {
+      margin-left: 2rem;
+    }
+
+    img:first-child {
+      transform: translateY(-6px);
+    }
+  }
+
+  .items-container {
+    animation: fadeIn linear 1s;
+
+    .carousel__item {
+      @include d-flex();
+      padding: 0 10rem;
+    }
+  }
+
+  .left-btn {
+    @extend %arrow-button;
+    left: -4.4rem;
+    transform: translateY(-50%) rotate(-90deg);
+    transition: all linear 0.3s;
+
+    &:hover {
+      transform: translateY(-50%) rotate(-90deg) translateY(-0.8rem);
+    }
+  }
+
+  .right-btn {
+    @extend %arrow-button;
+    right: -4.4rem;
+    transform: translateY(-50%) rotate(90deg);
+    transition: all linear 0.3s;
+
+    &:hover {
+      transform: translateY(-50%) rotate(90deg) translateY(-0.8rem);
+    }
+  }
+
+  .dots {
+    height: $dots-carousel-height;
+    width: $dots-carousel-height * 6;
+
+    .dot {
+      width: $dots-carousel-height;
+      height: $dots-carousel-height;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.13);
+
+      &.active {
+        background-color: $bg-light-c1;
+      }
+    }
+  }
+}
+
+.carousel__img {
+  width: 70%;
+}
+
+.carousel__info {
+  width: 30%;
+  @include d-flex($fd: column, $jc: center, $ai: flex-start);
+
+  .carousel__name {
+    @include text($fz: $fz-xxl, $lh: $lh-xxl);
+    margin-bottom: 1rem;
+  }
+
+  .carousel__description {
+    @include text($fz: $fz-lg);
+    margin-bottom: 4rem;
+  }
+
+  button {
+    @include button();
+
+    a {
+      @include text($fz: $fz-lg, $c: $text-light-c0);
+    }
+  }
+}

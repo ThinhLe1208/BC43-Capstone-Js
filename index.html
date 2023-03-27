@@ -13,26 +13,179 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Carousel -->
+    <link rel="stylesheet" href="./assets/css/carousel.css">
 
     <!-- Main Css -->
     <link rel="stylesheet" href="/assets/css/index.min.css">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-list">
 
+                    <img src="./assets/img/image 3.png" alt="">
+
+                    <div class="header-item">
+                        <img src="./assets/img/image 8.png" alt="">
+                        <a href="#">Login</a>
+                        <a href="/register.html">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="menu">
+                <a href="#" class="menu-link">Home</a>
+                <a href="#" class="menu-link">Men</a>
+                <a href="#" class="menu-link">Woman</a>
+                <a href="#" class="menu-link">Kid</a>
+                <a href="#" class="menu-link">Spot</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="carousel">
+        <div class="container">
+            <div class="skeleton-spinner">
+                <img src="/assets/img/loading_shoes_1.gif" alt="loading_shoes_1">
+                <img src="/assets/img/loading_shoes_2.gif" alt="loading_shoes_2">
+                <img src="/assets/img/loading_shoes_3.gif" alt="loading_shoes_3">
+            </div>
+            <div class="self-build-carousel">
+                <button class="left-btn"></button>
+                <button class="right-btn"></button>
+                <div class="dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+
+                <!-- render -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="feature">
+        <div class="container">
+            <div class="feature__title">-Product Feature-</div>
+            <ul class="feature__content row">
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-4">
+                    <div class="feature__item skeleton">
+                        <div class="feature__item-footer">
+                            <a href="" class="feature__button">Buy now</a>
+                            <div class="feature__price"></div>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- render -->
+
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <h3>GET HELP</h3>
+                        <p>Contact us</p>
+                        <p>Shopping</p>
+                        <p>NIKEiD</p>
+                        <p>Nike+</p>
+                    </div>
+                    <div class="footer-item">
+                        <h3>ORDERS</h3>
+                        <p>Payment options</p>
+                        <p>Shipping and delivery</p>
+                        <p>returns</p>
+
+                    </div>
+                    <div class="footer-item">
+                        <h3>REGISTER</h3>
+                        <p>Create one account to manage everything you do with Nike, from your shoppong preferences to
+                            your Nike+ activity.</p>
+                        <a href="#">Learm more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="container">
+                <div class="footer-list">
+                    <div class="footer-item">
+                        <h3>EMAIL SIGN UP</h3>
+                        <p>Be the first to know about new products and special offers</p>
+                        <a href="#">Sign up now</a>
+                    </div>
+                    <div class="footer-item">
+                        <h3>GIFT CARDS</h3>
+                        <p>Give the gift that alawys fits.</p>
+                        <a href="#">View cards</a>
+                    </div>
+                    <div class="footer-item">
+                        <h3>STORES NEAR YOU</h3>
+                        <p>Locate a Nike retail store or authorized retailer.</p>
+                        <a href="#">Search</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
-    <!-- API -->
-    <script src="/customer/controller/api.js"></script>
-
     <!-- Main JS -->
-    <script src="/customer/controller/index.js"></script>
+    <script type="module" src="./controllers/index.js"></script>
+
 </body>
 
 </html>

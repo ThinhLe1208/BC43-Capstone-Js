@@ -6,13 +6,12 @@
 @import "./Base/reset";
 @import "./Base/globalStyles";
 
-// Components
-
 // Layouts
 @import "./Layouts/header";
-@import "./Layouts/feature";
 @import "./Layouts/carousel";
+@import "./Layouts/feature";
 @import "./Layouts/detail";
+<<<<<<< HEAD
 
 // Themes
 @import "./Themes/defaultTheme";
@@ -265,3 +264,7 @@ footer {
     }
   }
 }
+=======
+@import "./Layouts/register";
+@import "./Layouts/footer";
+>>>>>>> 11f7979164cc4f3641852f4bbe2b6484fde131b1

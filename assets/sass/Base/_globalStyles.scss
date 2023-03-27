@@ -8,6 +8,11 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
+  @media only screen and (max-width: 64em) {
+    & {
+      font-size: 50%;
+    }
+  }
 }
 
 body {
@@ -53,14 +58,13 @@ button {
 }
 
 .col-4 {
-  flex: 1 0 auto;
   width: calc(100% / 3);
 }
 
 .container {
   width: 100%;
   max-width: 1280px;
-  padding-left: $gutter-x-c1;
+  padding: 0 $gutter-x-c1;
   margin-left: auto;
   margin-right: auto;
 }
