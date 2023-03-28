@@ -1,16 +1,14 @@
+import { $, $$ } from '../utils/basic.js';
 import { getById } from '../services/api.js';
 import { renderDetail, renderRelated } from '../utils/render.js';
 import { delay } from '../utils/basic.js';
-import zoomFeature from '../utils/zoomFeature.js';
-import interactInput from '../utils/interactInput.js';
-import hoverLineMenu from '../utils/hoverLineMenu.js';
-import checkLogIn from '../utils/checkLogIn.js';
+import { checkLogIn } from '../utils/logIn.js';
+import { interactInput, handleAddCart } from '../utils/carts.js';
+import { zoomFeature } from '../utils/basic.js';
+import { hoverLineMenu } from '../utils/basic.js';
 
 window.onload = async () => {
-    // check log in
     checkLogIn();
-
-    //hover line menu
     hoverLineMenu();
 
     // var param = new URL(window.location.href or path)
@@ -19,15 +17,15 @@ window.onload = async () => {
     const data = await getById(myParam);
 
     // Giả lập mạng yếu
-    await delay(2000);
+    await delay(1000);
 
-    // Render giao diện
-    renderDetail(data);
-    renderRelated(data);
+    if (data) {
+        renderDetail(data);
+        renderRelated(data);
+    }
 
-    // Tính năng phóng to hình ảnh
     zoomFeature();
-
-    // Tăng giảm giá trị ô input
     interactInput();
+
+    $('.detail__add-btn').addEventListener('click', handleAddCart);
 };

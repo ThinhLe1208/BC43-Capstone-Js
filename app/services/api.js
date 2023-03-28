@@ -5,7 +5,6 @@ export const getProducts = async () => {
       method: 'GET'
     });
 
-    console.log(promise.data.content);
     return promise.data.content;
   } catch (err) {
     console.log(err);
@@ -39,7 +38,7 @@ export const getRegister = async (post) => {
     });
 };
 
-export const signIn = async (data) => {
+export const logInApi = async (data) => {
   try {
     const promise = await axios({
       url: "https://shop.cyberlearn.vn/api/Users/signin",
@@ -53,7 +52,7 @@ export const signIn = async (data) => {
   }
 };
 
-export const getProfile = async (accessToken) => {
+export const getProfileApi = async (accessToken) => {
   try {
     const promise = await axios({
       url: "https://shop.cyberlearn.vn/api/Users/getProfile",
@@ -68,5 +67,42 @@ export const getProfile = async (accessToken) => {
     console.log(err);
   }
 };
+
+export const orderApi = async (email, data) => {
+  try {
+    const promise = axios({
+      url: "https://shop.cyberlearn.vn/api/Users/order",
+      method: 'POST',
+      data: {
+        "orderDetail": [
+          ...data
+        ],
+        "email": email
+      }
+    });
+    console.log(promise);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deleteOrderApi = async (id, accessToken) => {
+  try {
+    const promise = await axios({
+      url: "https://shop.cyberlearn.vn/api/Users/deleteOrder",
+      method: 'POST',
+      data: {
+        orderId: id
+      },
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+
+    console.log(promise);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 

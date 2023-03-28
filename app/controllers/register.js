@@ -1,5 +1,5 @@
 import Validation from '../models/Validation.js';
-import hoverLineMenu from '../utils/hoverLineMenu.js';
+import { hoverLineMenu } from '../utils/basic.js';
 import { getRegister } from '../services/api.js';
 
 //hover line menu

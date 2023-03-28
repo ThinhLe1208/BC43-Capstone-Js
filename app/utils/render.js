@@ -127,19 +127,19 @@ export const renderProfile = (data) => {
             <div class="col-md-6 profile__right">
                 <div class="mb-4">
                     <p class="form-label">Name</p>
-                    <div class="form-text">${data.name}</div>
+                    <div class="alert alert-info">${data.name}</div>
                 </div>
                 <div class="mb-4">
                     <p class="form-label">Email</p>
-                    <div class="form-text">${data.email}</div>
+                    <div class="alert alert-info">${data.email}</div>
                 </div>
                 <div class="mb-4">
                     <p class="form-label">Gender</p>
-                    <div class="form-text">${data.gender ? 'Nam' : 'Nữ'}</div>
+                    <div class="alert alert-info">${data.gender ? 'Nam' : 'Nữ'}</div>
                 </div>
                 <div class="mb-4">
                     <p class="form-label">Phone</p>
-                    <div class="form-text">${data.phone}</div>
+                    <div class="alert alert-info">${data.phone}</div>
                 </div>
             </div>
         `;
@@ -173,7 +173,7 @@ export const renderOrders = (data) => {
                     ${order.date}
                 </button>
             </h2>
-            <div id="collapse${index}" class="accordion-collapse collapse show" data-bs-parent="#accordionOrders">
+            <div id="collapse${index}" class="accordion-collapse collapse" data-bs-parent="#accordionOrders">
                 <div class="accordion-body">
                     <table class="table align-middle">
                         <thead>
@@ -182,6 +182,9 @@ export const renderOrders = (data) => {
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Price</th>
                                 <th class="text-center">Description</th>
+                                <th class="text-center">
+                                    <button class="profile__remove-order-btn btn btn-danger ms-3" data-id="${order.id}">Remove</button>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -197,10 +200,21 @@ export const renderOrders = (data) => {
     order.innerHTML = stringHTML.join('');
 };
 
-export const hideLoadingCarousel = () => {
-    const loading = document.querySelector('.skeleton-spinner');
-    const carousel = document.querySelector('.self-build-carousel');
+export const renderListCarts = (data) => {
+    const carts = document.querySelector('.carts__list');
 
-    loading.style.display = 'none';
-    carousel.innerHTML = '';
+    const cartsString = data.map((cart) => {
+        return `
+        <tr>
+            <td class="w-25">
+                <img src="${cart.image}" class="img-fluid" alt="">
+            </td>
+            <td>${cart.name}</td>
+            <td>${cart.price}$</td>
+            <td>${cart.shortDescription}</td>
+        </tr>
+        `;
+    });
+
+    carts.innerHTML = cartsString.join('');
 };

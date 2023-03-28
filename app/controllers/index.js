@@ -1,15 +1,12 @@
 import { getProducts } from '../services/api.js';
-import { renderCarousel, renderFeature, hideLoadingCarousel } from '../utils/render.js';
+import { renderCarousel, renderFeature } from '../utils/render.js';
 import { delay } from '../utils/basic.js';
 import Carousel from '../utils/carousel.js';
-import hoverLineMenu from '../utils/hoverLineMenu.js';
-import checkLogIn from '../utils/checkLogIn.js';
+import { hoverLineMenu, hideLoadingCarousel } from '../utils/basic.js';
+import { checkLogIn } from '../utils/logIn.js';
 
 window.onload = async () => {
-    // check log in
     checkLogIn();
-
-    //hover line menu
     hoverLineMenu();
 
     const data = await getProducts();

@@ -32,9 +32,9 @@
 
                     <div class="header-item">
                         <img src="../../assets/img/image 8.png" alt="">
-                        <a href="#">Login</a>
-                        <a href="./register.html">Register</a>
-                        <a href="./profile.html">Profile</a>
+                        <a href="./login.html" style="display:none">Login</a>
+                        <a href="./register.html" style="display:none">Register</a>
+                        <a href="./profile.html" style="display:none">Profile</a>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
     <section class="register" style="padding: 16rem 0">
         <div class="container">
             <div class="register-title">
-                <h2>Login</h2>
+                <h2 style="margin-bottom: 2rem;">Login</h2>
             </div>
             <form id="form-login" action="" class="register-form">
                 <div class="register-form-left">
@@ -65,13 +65,18 @@
                     <div class="input-focus-effect login ">
                         <div class="error-password"></div>
                         <span class="icon-password"></span>
-                        <input type="text" placeholder=" " id="password-login" />
+                        <input type="password" placeholder=" " id="password-login" />
                         <label>Password</label>
                     </div>
                 </div>
                 <div class="register-form-right">
+                    <div class="guest-info" style="font-size: 2.6rem;margin: 2rem 4rem">
+                        <h3 style="font-size: 3.2rem;font-weight:bold;margin-bottom: 1rem;">Guest</h3>
+                        <p>Email: 1243asdzxc@gmail.com</p>
+                        <p>Password: 123</p>
+                    </div>
                     <button type="submit" class="btn-register login"
-                        style="display: block;margin: 4rem auto;">Login</button>
+                        style="display: block;margin: 4rem 4rem;">Login</button>
                 </div>
             </form>
         </div>
