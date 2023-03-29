@@ -1,36 +1,39 @@
-class User {
-    email;
-    accessToken;
-    carts;
+import { localStorageName } from '../configs/configs.js';
 
-    constructor() {
-        const user = this.getUser();
-        if (user) {
-            const { email, accessToken, carts } = user;
-            this.email = email;
-            this.accessToken = accessToken;
-            this.carts = carts;
+class User {
+    constructor(email = "", accessToken = "", carts = []) {
+        this.email = email;
+        this.accessToken = accessToken;
+        this.carts = carts;
+    }
+
+    static getLocalStorage() {
+        const localUser = JSON.parse(localStorage.getItem(localStorageName));
+        if (localUser) {
+            const user = new User();
+            Object.assign(user, localUser);
+            return user;
         } else {
-            return {};
+            return null;
         }
     }
 
-    getUser() {
-        return JSON.parse(localStorage.getItem('user'));
+    setLocalStorage() {
+        localStorage.setItem(localStorageName, JSON.stringify(this));
     }
 
-    setUser() {
-        localStorage.setItem('user', JSON.stringify(this));
+    removeLocalStorage() {
+        localStorage.removeItem(localStorageName);
     }
 
     addCart(cart) {
         this.carts.push(cart);
-        this.setUser();
+        this.setLocalStorage();
     }
 
     emptyCarts() {
         this.carts = [];
-        this.setUser();
+        this.setLocalStorage();
     }
 };
 

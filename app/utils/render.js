@@ -126,19 +126,19 @@ export const renderProfile = (data) => {
             </div>
             <div class="col-md-6 profile__right">
                 <div class="mb-4">
-                    <p class="form-label">Name</p>
+                    <p class="form-label fw-semibold mb-3">Name</p>
                     <div class="alert alert-info">${data.name}</div>
                 </div>
                 <div class="mb-4">
-                    <p class="form-label">Email</p>
+                    <p class="form-label fw-semibold mb-3">Email</p>
                     <div class="alert alert-info">${data.email}</div>
                 </div>
                 <div class="mb-4">
-                    <p class="form-label">Gender</p>
+                    <p class="form-label fw-semibold mb-3">Gender</p>
                     <div class="alert alert-info">${data.gender ? 'Nam' : 'Nữ'}</div>
                 </div>
                 <div class="mb-4">
-                    <p class="form-label">Phone</p>
+                    <p class="form-label fw-semibold mb-3">Phone</p>
                     <div class="alert alert-info">${data.phone}</div>
                 </div>
             </div>
@@ -158,9 +158,9 @@ export const renderOrders = (data) => {
                     <td class="w-25">
                         <img src="${detail.image}" class="img-fluid" alt="">
                     </td>
-                    <td>${detail.name}</td>
-                    <td>${detail.price}$</td>
-                    <td>${detail.shortDescription}</td>
+                    <td class="text-center">${detail.name}</td>
+                    <td class="text-center">${detail.price}$</td>
+                    <td colspan="2">${detail.shortDescription}</td>
                 </tr>
             `;
         }, '');
@@ -175,13 +175,13 @@ export const renderOrders = (data) => {
             </h2>
             <div id="collapse${index}" class="accordion-collapse collapse" data-bs-parent="#accordionOrders">
                 <div class="accordion-body">
-                    <table class="table align-middle">
+                    <table class="table table-hover align-middle">
                         <thead>
                             <tr>
-                                <th class="text-center">Image</th>
-                                <th class="text-center">Name</th>
-                                <th class="text-center">Price</th>
-                                <th class="text-center">Description</th>
+                                <th class="text-center fw-semibold align-middle">Image</th>
+                                <th class="text-center fw-semibold align-middle">Name</th>
+                                <th class="text-center fw-semibold align-middle">Price</th>
+                                <th class="text-center fw-semibold align-middle">Description</th>
                                 <th class="text-center">
                                     <button class="profile__remove-order-btn btn btn-danger ms-3" data-id="${order.id}">Remove</button>
                                 </th>

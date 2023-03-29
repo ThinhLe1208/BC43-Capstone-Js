@@ -1,4 +1,5 @@
 import Validation from '../models/Validation.js';
+import User from '../models/User.js';
 import { $, $$ } from '../utils/basic.js';
 import { logInApi } from '../services/api.js';
 
@@ -26,29 +27,24 @@ export const handleLogIn = async (e) => {
     // Call API
     const data = await logInApi(login);
     if (data) {
-        const { accessToken, email } = data;
-        const user = {
-            accessToken,
-            email,
-            carts: []
-        };
-        const json = JSON.stringify(user);
+        const user = new User;
+        Object.assign(user, data);
+        user.setLocalStorage();
 
-        localStorage.setItem('user', json);
-        window.location.replace('../views/index.html');
         $$('.input-focus-effect.login div:first-child').forEach(item => item.innerHTML = '');
+        window.location.replace('../views/index.html');
     } else {
         $$('.input-focus-effect.login div:first-child').forEach(item => item.innerHTML = 'Thông tin không chính xác');
     }
 };
 
 export const handleLogOut = () => {
-    localStorage.removeItem('user');
+    new User().removeLocalStorage();
     window.location.replace('../views/index.html');
 };
 
 export const checkLogIn = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = User.getLocalStorage();
 
     // Show/hide profile in header
     if (user) {

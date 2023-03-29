@@ -28,24 +28,34 @@ export const interactInput = () => {
     };
 };
 
+export const setCartsQty = () => {
+    const user = User.getLocalStorage();
+    if (user) {
+        if (user.carts.length >= 1) {
+            $('.carts-qty').style.display = 'block';
+            $('.carts-qty').innerHTML = user.carts.length;
+        }
+    }
+};
+
 export const handleAddCart = async () => {
-    const qty = $('.detail__number').value;
     const param = new URLSearchParams(window.location.search);
     const myParam = param.get('id');
     const data = await getById(myParam);
-
     if (!data) {
         return;
     }
 
-    const user = new User();
-
-    if (!user.email) {
+    const user = User.getLocalStorage();
+    if (!user) {
         return;
     }
 
+    const qty = $('.detail__number').value;
     for (let i = 1; i <= qty; i++) {
         user.addCart(data);
     }
-    user.setUser();
+
+    user.setLocalStorage();
+    setCartsQty();
 };

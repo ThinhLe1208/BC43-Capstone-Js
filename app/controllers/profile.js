@@ -3,8 +3,10 @@ import { getProfileApi } from '../services/api.js';
 import { renderProfile, renderOrders } from '../utils/render.js';
 import { checkLogIn, handleLogOut } from '../utils/logIn.js';
 import { handleDeleteOrder } from '../utils/order.js';
+import { setCartsQty } from '../utils/carts.js';
 
 window.onload = async () => {
+    setCartsQty();
     const { accessToken } = checkLogIn();
     const data = await getProfileApi(accessToken);
 

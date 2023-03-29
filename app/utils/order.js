@@ -4,7 +4,10 @@ import { checkLogIn } from '../utils/logIn.js';
 import User from '../models/User.js';
 
 export const handleOrder = async () => {
-    const user = new User();
+    const user = User.getLocalStorage();
+    if (!user) {
+        return;
+    }
     const { email, carts } = user;
 
     const data = carts.map((cart) => {
