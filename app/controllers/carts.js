@@ -1,4 +1,4 @@
-import { $, $$, setCartsQty, checkLogIn, delay } from '../utils/basic.js';
+import { $, $$, setCartsQty, checkLogIn, numberWithCommas, delay } from '../utils/basic.js';
 import { renderListCarts } from '../utils/render.js';
 import { orderApi } from '../services/api.js';
 import User from '../models/User.js';
@@ -28,6 +28,17 @@ const handleOrder = async () => {
     window.location.replace('../views/index.html');
 };
 
+const handleDeleteCartItem = (index) => {
+    const user = User.getLocalStorage();
+
+    user.removeCart(index);
+    const totalPrice = user.totalPrice();
+
+    $('.carts__price').innerHTML = numberWithCommas(totalPrice) + ' $';
+    renderListCarts(user.carts);
+    setCartsQty();
+};
+
 window.onload = async () => {
     setCartsQty();
     checkLogIn();
@@ -35,10 +46,12 @@ window.onload = async () => {
     const user = User.getLocalStorage();
 
     if (user) {
-        if (user.carts.length) {
-            renderListCarts(user.carts);
-        }
+        const totalPrice = user.totalPrice();
+
+        $('.carts__price').innerHTML = numberWithCommas(totalPrice) + ' $';
+        renderListCarts(user.carts);
 
         $('.carts__buy-btn').addEventListener('click', handleOrder);
+        window.handleDeleteCartItem = handleDeleteCartItem;
     }
 };

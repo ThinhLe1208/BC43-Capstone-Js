@@ -31,6 +31,17 @@ class User {
         this.setLocalStorage();
     }
 
+    removeCart(index) {
+        this.carts.splice(index, 1);
+        this.setLocalStorage();
+    }
+
+    totalPrice() {
+        return this.carts.reduce((total, cart) => {
+            return total += cart.price;
+        }, 0);
+    }
+
     emptyCarts() {
         this.carts = [];
         this.setLocalStorage();

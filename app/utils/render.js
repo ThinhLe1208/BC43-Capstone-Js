@@ -202,19 +202,31 @@ export const renderOrders = (data) => {
 
 export const renderListCarts = (data) => {
     const carts = document.querySelector('.carts__list');
+    let cartsString;
 
-    const cartsString = data.map((cart) => {
-        return `
+    if (data.length == 0) {
+        cartsString = `
         <tr>
-            <td class="w-25">
-                <img src="${cart.image}" class="img-fluid" alt="">
-            </td>
-            <td>${cart.name}</td>
-            <td>${cart.price}$</td>
-            <td>${cart.shortDescription}</td>
+            <td class="text-center p-5" colspan="12">Empty</td>
         </tr>
         `;
-    });
+    } else {
+        cartsString = data.map((cart, index) => {
+            return `
+            <tr>
+                <td class="w-25">
+                    <img src="${cart.image}" class="img-fluid" alt="">
+                </td>
+                <td>${cart.name}</td>
+                <td>${cart.price}$</td>
+                <td>${cart.shortDescription}</td>
+                <th class="text-center">
+                    <button class="list__remove-cart-btn btn btn-danger mx-auto" onclick="handleDeleteCartItem(${index})">Remove</button>
+                </th>
+            </tr>
+            `;
+        }).join('');
+    }
 
-    carts.innerHTML = cartsString.join('');
+    carts.innerHTML = cartsString;
 };

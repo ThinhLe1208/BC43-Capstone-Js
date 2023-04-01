@@ -49,6 +49,8 @@ export const setCartsQty = () => {
         if (user.carts.length >= 1) {
             $('.carts-qty').style.display = 'block';
             $('.carts-qty').innerHTML = user.carts.length;
+        } else {
+            $('.carts-qty').style.display = 'none';
         }
     }
 };
@@ -82,4 +84,9 @@ export const checkLogIn = () => {
     }
 
     return user;
+};
+
+// Thêm phân cách hàng ngàn cho số
+export const numberWithCommas = function (number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };

@@ -1,4 +1,4 @@
-import { $, $$, delay, hoverLineMenu, checkLogIn, setCartsQty } from '../utils/basic.js';
+import { $, $$, delay, hoverLineMenu, checkLogIn, setCartsQty, numberWithCommas } from '../utils/basic.js';
 import { getById } from '../services/api.js';
 import { renderDetail, renderRelated } from '../utils/render.js';
 import { DELAY_NETWORK } from '../configs/configs.js';
@@ -7,25 +7,32 @@ import User from '../models/User.js';
 // Tăng giảm giá trị ô input
 const interactInput = () => {
     const input = $('.detail__number');
+    const priceEle = $('.detail__price');
+    const basePrice = +$('.detail__price').textContent.replace('$', '');
     let number = +input.value;
 
     $('.detail__increase-btn').onclick = () => {
         ++number;
         input.value = number;
+        priceEle.innerHTML = numberWithCommas(basePrice * number) + '$';
     };
 
     $('.detail__decrease-btn').onclick = () => {
         if (number > 1) {
             --number;
             input.value = number;
+            priceEle.innerHTML = numberWithCommas(basePrice * number) + '$';
         }
     };
 
     input.oninput = () => {
         if (+input.value >= 1) {
             number = +input.value;
+            priceEle.innerHTML = numberWithCommas(basePrice * number) + '$';
+
         } else {
             input.value = 1;
+            priceEle.innerHTML = numberWithCommas(basePrice * number) + '$';
         }
     };
 };

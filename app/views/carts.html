@@ -56,18 +56,20 @@
     <section class="carts py-2 py-md-5">
         <h1 class="text-center fs-1 fw-normal mb-5">-List-</h1>
         <div class="container">
-            <button class="carts__buy-btn btn btn-danger mb-3">Buy</button>
+            <div class="alert alert-danger w-50 d-flex justify-content-between text-end ms-auto">
+                <span class="fw-bold">Total :</span>
+                <span class="carts__price fw-medium"></span>
+            </div>
+            <button class="carts__buy-btn d-block btn btn-danger mb-3 ms-auto">Buy</button>
             <table class="table table-bordered align-middle table-hover">
                 <tr class="bg-primary">
                     <th class="text-center text-white">Image</th>
                     <th class="text-center text-white">Name</th>
                     <th class="text-center text-white">Price</th>
                     <th class="text-center text-white">Description</th>
+                    <th></th>
                 </tr>
                 <tbody class="carts__list">
-                    <tr>
-                        <td class="text-center p-5" colspan="12">Empty</td>
-                    </tr>
                     <!-- render -->
                 </tbody>
             </table>
