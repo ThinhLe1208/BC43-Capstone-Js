@@ -1,17 +1,44 @@
-import { $, $$ } from '../utils/basic.js';
+import { $, $$, setCartsQty, checkLogIn, delay } from '../utils/basic.js';
 import { renderListCarts } from '../utils/render.js';
-import { handleOrder } from '../utils/order.js';
+import { orderApi } from '../services/api.js';
 import User from '../models/User.js';
-import { setCartsQty } from '../utils/carts.js';
-import { checkLogIn } from '../utils/logIn.js';
+
+// Xử lý mua hàng
+const handleOrder = async () => {
+    const user = User.getLocalStorage();
+    if (!user) {
+        return;
+    }
+
+    const { email, carts } = user;
+    if (carts.length === 0) {
+        return;
+    }
+
+    const data = carts.map((cart) => {
+        return {
+            productId: cart.id,
+            quantity: 1
+        };
+    });
+
+    await orderApi(email, data);
+    user.emptyCarts();
+    await delay(1000);
+    window.location.replace('../views/index.html');
+};
 
 window.onload = async () => {
     setCartsQty();
     checkLogIn();
-    const user = User.getLocalStorage();
-    if (user.carts.length) {
-        renderListCarts(user.carts);
-    }
 
-    $('.carts__buy-btn').addEventListener('click', handleOrder);
+    const user = User.getLocalStorage();
+
+    if (user) {
+        if (user.carts.length) {
+            renderListCarts(user.carts);
+        }
+
+        $('.carts__buy-btn').addEventListener('click', handleOrder);
+    }
 };

@@ -1,4 +1,4 @@
-import { localStorageName } from '../configs/configs.js';
+import { LOCAL_STORAGE_NAME } from '../configs/configs.js';
 
 class User {
     constructor(email = "", accessToken = "", carts = []) {
@@ -8,7 +8,7 @@ class User {
     }
 
     static getLocalStorage() {
-        const localUser = JSON.parse(localStorage.getItem(localStorageName));
+        const localUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_NAME));
         if (localUser) {
             const user = new User();
             Object.assign(user, localUser);
@@ -19,11 +19,11 @@ class User {
     }
 
     setLocalStorage() {
-        localStorage.setItem(localStorageName, JSON.stringify(this));
+        localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(this));
     }
 
     removeLocalStorage() {
-        localStorage.removeItem(localStorageName);
+        localStorage.removeItem(LOCAL_STORAGE_NAME);
     }
 
     addCart(cart) {

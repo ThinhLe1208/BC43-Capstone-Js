@@ -1,6 +1,9 @@
+import User from '../models/User.js';
+
 export const $ = document.querySelector.bind(document);
 export const $$ = document.querySelectorAll.bind(document);
 
+// Giả lập mạng yếu
 export const delay = (time) => {
     return new Promise((resolve) => {
         setTimeout(resolve, time);
@@ -20,7 +23,7 @@ export const randomEls = (arr, amount) => {
     return output;
 };
 
-// Chuyển động gạch dưới khi hover
+// Chuyển động gạch dưới khi hover thanh nav trên header
 export const hoverLineMenu = () => {
     const links = [...document.querySelectorAll(".menu-link")];
     links.forEach((item) => item.addEventListener("mouseenter", handleHoveerLine));
@@ -39,28 +42,44 @@ export const hoverLineMenu = () => {
     });
 };
 
-// Tính năng phóng to hình ảnh
-export const zoomFeature = () => {
-    if (window.innerWidth > 576) {
-        const detailImg = document.querySelector('.detail__img > img');
-        const detailImgZoomCon = document.querySelector('.detail__img-zoom-container');
-        const detailImgZoom = document.querySelector('.detail__img-zoom');
-
-        detailImg.onmousemove = (e) => {
-            detailImgZoomCon.style.display = 'block';
-            detailImgZoom.style.objectPosition = `${-e.offsetX}px ${-e.offsetY}px`;
-        };
-
-        detailImg.onmouseout = () => {
-            detailImgZoomCon.style.display = 'none';
-        };
+// Hiển thị số lượng hàng trong giỏ hàng trên icon cart header
+export const setCartsQty = () => {
+    const user = User.getLocalStorage();
+    if (user) {
+        if (user.carts.length >= 1) {
+            $('.carts-qty').style.display = 'block';
+            $('.carts-qty').innerHTML = user.carts.length;
+        }
     }
 };
 
+// Ẩn loading animation
 export const hideLoadingCarousel = () => {
     const loading = document.querySelector('.skeleton-spinner');
     const carousel = document.querySelector('.self-build-carousel');
 
     loading.style.display = 'none';
     carousel.innerHTML = '';
+};
+
+// Kiểm tra đăng nhập
+export const checkLogIn = () => {
+    const user = User.getLocalStorage();
+
+    // Show/hide profile in header
+    if (user) {
+        $$('.header-item > a').forEach((ele) => {
+            ele.href.split('/').at(-1) == 'profile.html'
+                ? ele.style.display = 'block'
+                : ele.style.display = 'none';
+        });
+    } else {
+        $$('.header-item > a').forEach((ele) => {
+            ele.href.split('/').at(-1) == 'profile.html'
+                ? ele.style.display = 'none'
+                : ele.style.display = 'block';
+        });
+    }
+
+    return user;
 };
