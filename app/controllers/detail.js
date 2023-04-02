@@ -1,4 +1,4 @@
-import { $, $$, delay, hoverLineMenu, checkLogIn, setCartsQty, numberWithCommas } from '../utils/basic.js';
+import { $, $$, delay, backToTop, hoverLineMenu, checkLogIn, setCartsQty, numberWithCommas } from '../utils/basic.js';
 import { getById } from '../services/api.js';
 import { renderDetail, renderRelated } from '../utils/render.js';
 import { DELAY_NETWORK } from '../configs/configs.js';
@@ -82,6 +82,7 @@ window.onload = async () => {
     checkLogIn();
     hoverLineMenu();
     setCartsQty();
+    backToTop();
 
     // var param = new URL(window.location.href or path)
     const URLparam = new URLSearchParams(window.location.search);

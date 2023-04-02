@@ -80,7 +80,6 @@ export const orderApi = async (email, data) => {
         "email": email
       }
     });
-    console.log(promise);
   } catch (err) {
     console.log(err);
   }
@@ -98,8 +97,6 @@ export const deleteOrderApi = async (id, accessToken) => {
         Authorization: `Bearer ${accessToken}`
       }
     });
-
-    console.log(promise);
   } catch (err) {
     console.log(err);
   }

@@ -13,11 +13,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Carousel -->
-    <link rel="stylesheet" href="../../assets/css/carousel.css">
+    <link rel="stylesheet" href="./assets/css/carousel.css">
 
     <!-- Main Css -->
-    <link rel="stylesheet" href="../../assets/css/index.min.css">
+    <link rel="stylesheet" href="./assets/css/index.min.css">
 </head>
 
 <body>
@@ -25,25 +30,25 @@
         <div class="header-top">
             <div class="container">
                 <div class="header-list">
-                    <img src="../../assets/img/image 3.png" alt="">
+                    <img src="./assets/img/image 3.png" alt="">
 
                     <div class="header-item">
                         <div>
-                            <a href="./carts.html" style="position:relative">
-                                <img src="../../assets/img/image 8.png" alt="carts">
+                            <a href="./app/views/carts.html" style="position:relative">
+                                <img src="./assets/img/image 8.png" alt="carts">
                                 <span class="carts-qty" style="display:none">1</span>
                             </a>
                         </div>
-                        <a href="./login.html" style="display:none">Login</a>
-                        <a href="./register.html" style="display:none">Register</a>
-                        <a href="./profile.html" style="display:none">Profile</a>
+                        <a href="./app/views/login.html" style="display:none">Login</a>
+                        <a href="./app/views/register.html" style="display:none">Register</a>
+                        <a href="./app/views/profile.html" style="display:none">Profile</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <nav class="menu">
-                <a href="./index.html" class="menu-link">Home</a>
+                <a href="#" class="menu-link">Home</a>
                 <a href="#" class="menu-link">Men</a>
                 <a href="#" class="menu-link">Woman</a>
                 <a href="#" class="menu-link">Kid</a>
@@ -55,9 +60,9 @@
     <section class="carousel">
         <div class="container">
             <div class="skeleton-spinner">
-                <img src="../../assets/img/loading_shoes_1.gif" alt="loading_shoes_1">
-                <img src="../../assets/img/loading_shoes_2.gif" alt="loading_shoes_2">
-                <img src="../../assets/img/loading_shoes_3.gif" alt="loading_shoes_3">
+                <img src="./assets/img/loading_shoes_1.gif" alt="loading_shoes_1">
+                <img src="./assets/img/loading_shoes_2.gif" alt="loading_shoes_2">
+                <img src="./assets/img/loading_shoes_3.gif" alt="loading_shoes_3">
             </div>
             <div class="self-build-carousel">
                 <button class="left-btn"></button>
@@ -82,7 +87,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -99,7 +104,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -116,7 +121,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -133,7 +138,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -150,7 +155,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -167,7 +172,7 @@
                     <div class="feature__item skeleton">
                         <div class="feature__item-top">
                             <div class="feature__item-header">
-                                <img src="../../assets/img/skeleton_img.png" alt="product-img">
+                                <img src="./assets/img/skeleton_img.png" alt="product-img">
                             </div>
                             <div class="feature__item-body">
                                 <h3></h3>
@@ -239,11 +244,15 @@
         </div>
     </footer>
 
+    <button id="moveToTop">
+        <i class="fa fa-angle-up"></i>
+    </button>
+
     <!-- Axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
     <!-- Main JS -->
-    <script type="module" src="../controllers/index.js"></script>
+    <script type="module" src="./app/controllers/index.js"></script>
 
 </body>
 

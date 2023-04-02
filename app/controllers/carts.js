@@ -1,4 +1,4 @@
-import { $, $$, setCartsQty, checkLogIn, numberWithCommas, delay } from '../utils/basic.js';
+import { $, $$, setCartsQty, backToTop, checkLogIn, numberWithCommas, delay } from '../utils/basic.js';
 import { renderListCarts } from '../utils/render.js';
 import { orderApi } from '../services/api.js';
 import User from '../models/User.js';
@@ -25,15 +25,15 @@ const handleOrder = async () => {
     await orderApi(email, data);
     user.emptyCarts();
     await delay(1000);
-    window.location.replace('../views/index.html');
+    window.location.replace('../../index.html');
 };
 
+// Xử lý khi xóa hàng khỏi giỏ hàng
 const handleDeleteCartItem = (index) => {
     const user = User.getLocalStorage();
-
     user.removeCart(index);
-    const totalPrice = user.totalPrice();
 
+    const totalPrice = user.totalPrice();
     $('.carts__price').innerHTML = numberWithCommas(totalPrice) + ' $';
     renderListCarts(user.carts);
     setCartsQty();
@@ -42,9 +42,9 @@ const handleDeleteCartItem = (index) => {
 window.onload = async () => {
     setCartsQty();
     checkLogIn();
+    backToTop();
 
     const user = User.getLocalStorage();
-
     if (user) {
         const totalPrice = user.totalPrice();
 

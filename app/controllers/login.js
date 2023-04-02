@@ -1,4 +1,4 @@
-import { $, $$, setCartsQty, checkLogIn, hoverLineMenu } from '../utils/basic.js';
+import { $, $$, setCartsQty, backToTop, checkLogIn, hoverLineMenu } from '../utils/basic.js';
 import { logInApi } from '../services/api.js';
 import Validation from '../models/Validation.js';
 import User from '../models/User.js';
@@ -33,7 +33,7 @@ const handleLogIn = async (e) => {
         user.setLocalStorage();
 
         $$('.input-focus-effect.login div:first-child').forEach(item => item.innerHTML = '');
-        window.location.replace('../views/index.html');
+        window.location.replace('../../index.html');
     } else {
         $$('.input-focus-effect.login div:first-child').forEach(item => item.innerHTML = 'Thông tin không chính xác');
     }
@@ -43,6 +43,7 @@ window.onload = async () => {
     checkLogIn();
     hoverLineMenu();
     setCartsQty();
+    backToTop();
 
     $(".btn-register.login").addEventListener('click', handleLogIn);
 };

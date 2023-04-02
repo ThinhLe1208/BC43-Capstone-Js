@@ -1,4 +1,4 @@
-import { $, $$, checkLogIn, setCartsQty } from '../utils/basic.js';
+import { $, $$, backToTop, checkLogIn, setCartsQty } from '../utils/basic.js';
 import { getProfileApi, deleteOrderApi } from '../services/api.js';
 import { renderProfile, renderOrders } from '../utils/render.js';
 import User from '../models/User.js';
@@ -6,7 +6,7 @@ import User from '../models/User.js';
 // Xử lý đăng xuất
 const handleLogOut = () => {
     new User().removeLocalStorage();
-    window.location.replace('../views/index.html');
+    window.location.replace('../../index.html');
 };
 
 // Xử lý xóa lịch sử đơn hàng
@@ -22,6 +22,8 @@ const handleDeleteOrder = (e) => {
 
 window.onload = async () => {
     setCartsQty();
+    backToTop();
+
     const { accessToken } = checkLogIn();
     const data = await getProfileApi(accessToken);
 

@@ -8,6 +8,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   @include xlg {
     font-size: 56%;
@@ -128,4 +129,17 @@ button {
   @include sm {
     max-width: 540px;
   }
+}
+
+#moveToTop {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  color: $text-dark-c1;
+  font-size: $fz-mxl;
+  cursor: pointer;
+  z-index: 999;
 }

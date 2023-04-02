@@ -45,3 +45,16 @@ button {
   border: 1px solid transparent;
   border-radius: 50%;
 }
+
+#moveToTop {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+  width: 20px;
+  height: 20px;
+  border: none;
+  color: #656774;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 999;
+}

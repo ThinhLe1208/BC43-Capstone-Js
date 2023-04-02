@@ -13,7 +13,7 @@ export const renderCarousel = (data) => {
             <div class="carousel__info">
                 <h3 class="carousel__name">${product.name}</h3>
                 <p class="carousel__description">${product.shortDescription}</p>
-                <button><a href="./detail.html?id=${product.id}">Buy now</a></button>
+                <button><a href="./app/views/detail.html?id=${product.id}">Buy now</a></button>
             </div>
         </div>
         `;
@@ -40,7 +40,7 @@ export const renderFeature = (data) => {
                     </div>
                 </div >
                 <div class="feature__item-footer">
-                    <a href="./detail.html?id=${product.id}" class="feature__button">Buy now</a>
+                    <a href="./app/views/detail.html?id=${product.id}" class="feature__button">Buy now</a>
                     <div class="feature__price">${product.price}$</div>
                 </div>
             </div>
@@ -119,8 +119,6 @@ export const renderProfile = (data) => {
             <img src="${data.avatar}" alt="avatar"
             class="d-block w-50 border border-primary border-3 rounded-circle mx-auto mb-4">
             <div class="text-center">
-                <button class="profile__pass-btn btn btn-warning">Password</button>
-                <button class="profile__update-btn btn btn-success">Update</button>
                 <button class="profile__logout-btn btn btn-danger">Logout</button>
             </div>
             </div>

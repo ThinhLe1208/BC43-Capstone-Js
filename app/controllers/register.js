@@ -1,9 +1,10 @@
 import Validation from '../models/Validation.js';
-import { hoverLineMenu } from '../utils/basic.js';
+import { hoverLineMenu, backToTop } from '../utils/basic.js';
 import { getRegister } from '../services/api.js';
 
 //hover line menu
 hoverLineMenu();
+backToTop();
 
 // value gender
 const mala = document.getElementsByName("type");

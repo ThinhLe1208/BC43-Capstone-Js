@@ -90,3 +90,22 @@ export const checkLogIn = () => {
 export const numberWithCommas = function (number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
+
+// Back to top
+export const backToTop = function () {
+    $('#moveToTop').onclick = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+
+    window.onscroll = function () {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            $("#moveToTop").style.display = "block";
+        } else {
+            $("#moveToTop").style.display = "none";
+        }
+    };
+};
