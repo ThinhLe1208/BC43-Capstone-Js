@@ -158,7 +158,7 @@ export const renderOrders = (data) => {
                     </td>
                     <td class="text-center">${detail.name}</td>
                     <td class="text-center">${detail.price}$</td>
-                    <td colspan="2">${detail.shortDescription}</td>
+                    <td colspan="2" class="d-none d-sm-table-cell">${detail.shortDescription}</td>
                 </tr>
             `;
         }, '');
@@ -179,9 +179,9 @@ export const renderOrders = (data) => {
                                 <th class="text-center fw-semibold align-middle">Image</th>
                                 <th class="text-center fw-semibold align-middle">Name</th>
                                 <th class="text-center fw-semibold align-middle">Price</th>
-                                <th class="text-center fw-semibold align-middle">Description</th>
+                                <th class="text-center fw-semibold align-middle d-none d-sm-table-cell">Description</th>
                                 <th class="text-center">
-                                    <button class="profile__remove-order-btn btn btn-danger ms-3" data-id="${order.id}">Remove</button>
+                                    <button class="profile__remove-order-btn btn btn-danger ms-3" data-id="${order.id}">X</button>
                                 </th>
                             </tr>
                         </thead>
@@ -217,9 +217,9 @@ export const renderListCarts = (data) => {
                 </td>
                 <td>${cart.name}</td>
                 <td>${cart.price}$</td>
-                <td>${cart.shortDescription}</td>
+                <td class="d-none d-sm-table-cell">${cart.shortDescription}</td>
                 <th class="text-center">
-                    <button class="list__remove-cart-btn btn btn-danger mx-auto" onclick="handleDeleteCartItem(${index})">Remove</button>
+                    <button class="list__remove-cart-btn btn btn-danger mx-auto" onclick="handleDeleteCartItem(${index})">X</button>
                 </th>
             </tr>
             `;
