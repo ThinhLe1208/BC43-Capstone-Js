@@ -237,6 +237,7 @@ footer .footer-content .footer-list {
   padding: 30px 0;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 footer .footer-content .footer-list .footer-item {
   width: calc(33.3333333333% - 20px);
@@ -262,4 +263,53 @@ footer .footer-content .footer-list .footer-item:last-child {
 }
 footer .footer-content:last-child {
   background-color: #ececec;
+}
+
+@media screen and (max-width: 767.8px) {
+  body .header .header-top {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 30px 20px;
+  }
+  body .header .menu {
+    margin: 20px;
+  }
+  body .register {
+    padding: 0 40px;
+  }
+  body footer .footer-content {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 575.8px) {
+  body .register {
+    margin-bottom: 20px;
+  }
+  body .register .register-form {
+    flex-direction: column;
+  }
+  body .register .register-form .register-form-left {
+    padding-right: 20px;
+    width: 100%;
+    margin: 0;
+  }
+  body .register .register-form .register-form-right {
+    width: 100%;
+    padding-right: 20px;
+    margin: 0;
+  }
+  body .register .register-form .register-form-right .btn-register {
+    display: block;
+    margin: 0 auto;
+  }
+  body footer .footer-list {
+    row-gap: 30px;
+  }
+  body footer .footer-list .footer-item {
+    text-align: center;
+    width: 100% !important;
+    border-right: none !important;
+    margin: 0 !important;
+  }
 }

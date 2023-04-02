@@ -15,8 +15,8 @@ const handleLogIn = async (e) => {
     };
     let valid = false;
 
-    valid = check.checkEmail(login.email, ".error-email", ".icon-email");
-    // & check.checkPassword(login.password,".error-password",".icon-password");
+    valid = check.checkEmail(login.email, ".error-email", ".icon-email")
+        & check.checkPassword(login.password, ".error-password", ".icon-password");
 
     if (!valid) {
         return;
@@ -39,6 +39,23 @@ const handleLogIn = async (e) => {
     }
 };
 
+const handleLogInGuest = async (e) => {
+    e.preventDefault();
+
+    const loginGuest = {
+        email: 'nguyenvanan11345@gmail.com',
+        password: '123zxc123',
+    };
+
+    const data = await logInApi(loginGuest);
+    if (data) {
+        const user = new User;
+        Object.assign(user, data);
+        user.setLocalStorage();
+        window.location.replace('../../index.html');
+    }
+};
+
 window.onload = async () => {
     checkLogIn();
     hoverLineMenu();
@@ -46,4 +63,5 @@ window.onload = async () => {
     backToTop();
 
     $(".btn-register.login").addEventListener('click', handleLogIn);
+    $(".btn-register.guest").addEventListener('click', handleLogInGuest);
 };

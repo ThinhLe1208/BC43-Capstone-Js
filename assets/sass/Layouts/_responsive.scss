@@ -43,5 +43,16 @@
         }
       }
     }
+    footer {
+      .footer-list {
+        row-gap: 3rem;
+        .footer-item {
+          text-align: center;
+          width: 100% !important;
+          border-right: none !important;
+          margin: 0 !important;
+        }
+      }
+    }
   }
 }

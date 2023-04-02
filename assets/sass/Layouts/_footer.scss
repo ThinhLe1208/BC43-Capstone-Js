@@ -5,6 +5,7 @@ footer {
       padding: 3rem 0;
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       .footer-item {
         width: calc(100% / 3 - 2rem);
         padding: 0 2rem;

@@ -5,6 +5,7 @@ footer {
       padding: 30px 0;
       width: 100%;
       display: flex;
+      flex-wrap: wrap;
       .footer-item {
         width: calc(100% / 3 - 20px);
         padding: 0 20px;
@@ -31,5 +32,64 @@ footer {
   }
   .footer-content:last-child {
     background-color: #ececec;
+  }
+}
+
+@media screen and (max-width: 767.8px) {
+  body {
+    .header {
+      .header-top {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding: 30px 20px;
+      }
+      .menu {
+        margin: 20px;
+      }
+    }
+    .register {
+      padding: 0 40px;
+    }
+    footer {
+      .footer-content {
+        padding: 0 40px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 575.8px) {
+  body {
+    .register {
+      margin-bottom: 20px;
+      .register-form {
+        flex-direction: column;
+        .register-form-left {
+          padding-right: 20px;
+          width: 100%;
+          margin: 0;
+        }
+        .register-form-right {
+          width: 100%;
+          padding-right: 20px;
+          margin: 0;
+          .btn-register {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    footer {
+      .footer-list {
+        row-gap: 30px;
+        .footer-item {
+          text-align: center;
+          width: 100% !important;
+          border-right: none !important;
+          margin: 0 !important;
+        }
+      }
+    }
   }
 }

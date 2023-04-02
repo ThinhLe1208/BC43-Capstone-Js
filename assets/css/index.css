@@ -1204,6 +1204,7 @@ footer .footer-content .footer-list {
   padding: 3rem 0;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 footer .footer-content .footer-list .footer-item {
   width: calc(33.3333333333% - 2rem);
@@ -1268,5 +1269,14 @@ footer .footer-content:last-child {
   body .register .register-form .register-form-right .btn-register {
     display: block;
     margin: 0 auto;
+  }
+  body footer .footer-list {
+    row-gap: 3rem;
+  }
+  body footer .footer-list .footer-item {
+    text-align: center;
+    width: 100% !important;
+    border-right: none !important;
+    margin: 0 !important;
   }
 }
