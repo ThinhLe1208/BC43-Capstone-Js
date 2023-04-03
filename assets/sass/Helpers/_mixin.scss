@@ -71,7 +71,7 @@
 
   @if ($eff) {
     &::before {
-      content: url("/assets/img/sneakers_1.png");
+      content: url("../img/sneakers_1.png");
       position: absolute;
       top: 0;
       bottom: 5rem;
@@ -83,7 +83,7 @@
     }
 
     &::after {
-      content: url("/assets/img/sneakers_3.png");
+      content: url("../img/sneakers_3.png");
       position: absolute;
       top: 0;
       bottom: 2rem;

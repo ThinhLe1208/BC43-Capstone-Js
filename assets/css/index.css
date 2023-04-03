@@ -454,7 +454,7 @@ button {
 }
 
 .carousel {
-  background: url("/assets/img/slider_bg.png") bottom/contain no-repeat;
+  background: url("../img/slider_bg.png") bottom/cover no-repeat;
   padding-bottom: 6.6rem;
   overflow: hidden;
 }
@@ -584,7 +584,7 @@ button {
   cursor: pointer;
 }
 .carousel__info button::before {
-  content: url("/assets/img/sneakers_1.png");
+  content: url("../img/sneakers_1.png");
   position: absolute;
   top: 0;
   bottom: 5rem;
@@ -595,7 +595,7 @@ button {
   transition: all ease-out 0.6s;
 }
 .carousel__info button::after {
-  content: url("/assets/img/sneakers_3.png");
+  content: url("../img/sneakers_3.png");
   position: absolute;
   top: 0;
   bottom: 2rem;
@@ -825,7 +825,7 @@ button {
   width: 58%;
 }
 .feature__item-footer .feature__button::before {
-  content: url("/assets/img/sneakers_1.png");
+  content: url("../img/sneakers_1.png");
   position: absolute;
   top: 0;
   bottom: 5rem;
@@ -836,7 +836,7 @@ button {
   transition: all ease-out 0.6s;
 }
 .feature__item-footer .feature__button::after {
-  content: url("/assets/img/sneakers_3.png");
+  content: url("../img/sneakers_3.png");
   position: absolute;
   top: 0;
   bottom: 2rem;
@@ -1092,7 +1092,7 @@ button {
 }
 
 .register {
-  margin: 3rem 0;
+  margin: 4rem 0;
 }
 .register .container .register-title {
   text-align: center;
